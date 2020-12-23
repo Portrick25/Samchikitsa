@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+    cursor: pointer;
+
+        }
+        .container:hover{
+            opacity: 0.8;
+        }
+        a{
+            text-transform:uppercase;
+            background-color: blue;
+             color:white;
+             text-decoration: none; 
+             padding: 1em;
+        }
+        .links{
+            margin: 1em;
+            padding: 1em;
+        }
+    </style>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"> 
+        <strong>User Not Verified Please Verify your Email Id</strong><br>
+        <div class="links"><a href="login.html">login again</a><br></div>
+        <div class="links"><a onclick="send_verification()" >Send Verification Code</a><br></div>
+    </div>
+</body>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB2MAuoYNwlnfE7D3DUFF0ksTq52inDdmY",
+      authDomain: "samchikitsa-8ae9a.firebaseapp.com",
+      databaseURL: "https://samchikitsa-8ae9a.firebaseio.com",
+      projectId: "samchikitsa-8ae9a",
+      storageBucket: "samchikitsa-8ae9a.appspot.com",
+      messagingSenderId: "151461880341",
+      appId: "1:151461880341:web:3a6fbdaa6d75229d9ee41c",
+      measurementId: "G-XGTMGR77Z4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  
+      const auth = firebase.auth();
+    document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+   
+    auth.onAuthStateChanged(function(user){
+        if(user){
+            if(user.emailVerified){
+                window.location.replace("psycho-dashboard.html")
+            }
+        }
+    })
+      function send_verification(){
+            var user = auth.currentUser;
+            user.sendEmailVerification().then(function() {
+            alert("verification code sent.")
+            }).catch(function(error) {
+            // An error happened.
+            });
+      }
+</script>
+
+</html>

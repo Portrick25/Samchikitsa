@@ -1,0 +1,312 @@
+
+  .grid-container{
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    max-height: auto;
+    max-width:40vw ;
+    margin: auto;
+    padding: 2em;
+
+  }
+
+  #myCard{
+    width:auto;
+    padding: 1em;
+    margin: auto;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+
+  /* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(6, 204, 95); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background:  rgb(6, 129, 62); 
+}
+
+.htc{
+    margin: auto;
+    padding: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.banner img{
+    width:100% ;
+    height: 60vh;
+    margin: auto;
+
+}
+
+#recaptcha-container{
+    display: flex;
+    justify-content: center;
+}
+
+#chat{
+    margin: 1em;
+    background-color: rgb(9, 9, 153);
+    padding:0.3em 0.6em 0.3em 0.6em ;
+    border: solid white 1px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 5px;
+}
+.options{
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+#consult1{
+    margin: auto;
+    width: 40vw;
+    margin: auto;
+    padding:1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#consult, #consult-pref{
+    margin: 1em;
+    width: 40vw;
+    margin: auto;
+    padding:1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#consult h1, #consult1 h1, #doctors h1,#consult-pref h1 {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: rgb(12, 160, 78);
+    text-shadow: 2px 2px 4px #353434;
+    text-align: center;
+}
+
+#consult input,#consult1 input, #consult1 select, #consult select,#consult-pref input, #consult-pref select{
+    width: 30vw;
+    margin: 0.3em;
+    padding:0.1cm;
+    border: solid black 1px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+#consult label,#consult1 label, #consult-pref label{
+    border: 0;
+    font-size: 1.4em;
+    text-shadow: 2px 2px 4px #5cfa99;
+    margin: 0.3em;
+    color: rgb(0, 2, 107);
+    font-family: alata;
+}
+#small-box{
+    max-width: 1em;
+}
+#amount{
+    text-shadow: 2px 2px 4px #5cfa99;
+    margin: 0.3em;
+    color: rgb(0, 2, 107);
+    font-family: alata;
+    border: 0;
+    font-size: 1.7em;
+}
+#cancel{
+    color: red;
+    border: 0;
+}
+
+#amount del{
+    text-align: left;
+}
+#amount span{
+    text-align: right;
+}
+
+#consult button,#consult1 button, #book-doctor, #consult-pref button{
+    padding:0.3em 0.6em 0.3em 0.6em;
+    margin: 0.3em;
+    font-size: 1.3em;
+    color: white;
+    background-color:rgb(12, 160, 78);
+    text-shadow: 2px 2px 4px #383838;
+    font-family: alata;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0;
+    border-radius: 4px;
+}
+#consult button:hover,#consult1 button:hover, #consult-pref button:hover, #book-doctor:hover{
+    opacity: 0.8;
+}
+
+
+#appointmentModule{
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.module{
+    width: 30vw;
+    background-color: tomato;
+    margin: auto;
+    margin-top: 1em;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 7px;
+
+}
+
+.module img{
+    width: 4cm;
+    height: 4cm;
+    margin: 1em;
+
+}
+#opdlink{
+    margin: 1em;
+}
+#opdlink a{
+    color: white;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+#Diabetes, #uricAcid, #spine, #hyperthyroidism, #hypothyroidism, #cholestrol{
+
+font-size: 1em;
+max-width: 1em;
+}
+#consult{
+    margin: auto;
+}
+#consult1,#doctors{
+    margin: 1em;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 1em;
+}
+#doctors{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.2em; 
+    border-radius: 7px;
+    
+}
+
+#doct-list, #samchikitsa-doct-list{
+    text-align: center;
+    margin: 1em 1em 0 0 ;
+    padding: 0.2em;
+    font-size: 0.7em;
+    display: grid;
+    grid-template-columns:auto auto auto auto auto auto auto auto auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+
+
+}
+.doct-list-content{
+    text-align: center;
+    padding: 0.3em;
+    width: 120px;
+    margin:1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+#doct-list img,#samchikitsa-doct-list img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+
+@media only screen and (max-width:800px){
+    #consult{
+        width: 87vw;
+        margin: auto;
+        margin-top: 1em;
+    }
+    #consult1{
+        width: 87vw;
+        margin: auto;
+        margin-top: 1em;
+    }
+
+    #consult h1, #consult1 h1, #doctors h1 {
+        font-size: 1.8em;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #doct-list{
+        text-align: center;
+        padding: 1em;
+        display: grid;
+        height: 80vh;
+        grid-template-columns: auto auto;
+    
+    
+    }
+    #consult input,#consult1 input, #consult1 select, #consult select{
+        width: 77vw;}
+    
+    #chat{
+        font-size:1em ;
+        margin: 0.2em;
+    }
+    .htc{
+        margin: 0.1em;
+        padding: 0;
+    }
+    #appointmentModule{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .module{
+        width: 80vw;
+    }
+}
+
+#opdlink a:hover{
+    color: rgb(52, 245, 94);
+    text-shadow: 2px 2px 4px #353434;
+}
+
+@media only screen and (max-width:800px){
+    #doct-list{
+        text-align: center;
+        padding: 1em;
+        display: grid;
+        grid-template-columns: auto;
+    
+    
+    }
+}

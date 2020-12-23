@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/doctDashboard.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samchikitsa Signup</title>
+</head>
+<body>
+
+<div class="PC">    
+    <div class="header">
+        <div class="brand"><img class="brand-img" src="../images/logo.png" alt="logo"></div>
+        <div class="sam-title">
+            <h3> SAMCHIKITSA </h3>
+            
+            <div class="quote-bg"><b id="btext"></b></div>
+        </div>
+        <div class="account">
+            <img class="avatar" id="" src="../images/avatar.png" alt="" srcset="">  
+            <div class="account-detail">
+                <div class="account-detail-content"><a id="myprofile" href="#">My Profile</a></div>
+                <div class="account-detail-content"><a href="#">Edit User</a></div>
+                <div class="account-detail-content"><button onclick="signOut()">Logout</button></div>
+            </div>  
+        </div>
+    </div>
+    <nav>
+        <a class="nav-link active" href="../index.html">Home</a>
+        <a class="nav-link" href="about.html" >About Us</a>
+        <a class="nav-link" href="testimonial.html">Testimonials</a>
+        <a class="nav-link" href="us.html">Upcoming Services</a>
+        <a class="nav-link" id="mdh" href="#">SignUp</a>
+        
+    <div class="signupContainer">
+        <a href="signup.html"> Signup As user </a><br><hr>
+        <a href="doctSignup.html"> Signup As doctor </a> <br><hr>
+        <a href="doctPsycho.html"> Signup As psychiatrist </a>
+    </div>
+        <a class="nav-link" id="mdh2" href="#">Login</a>
+        <div class="signupContainer2">
+            <a href="login.html"> login As user </a><br><hr>
+            <a href="doctSignup.html"> login As doctor </a> <br><hr>
+            <a href="doctPsycho.html"> login As psychiatrist </a>
+        </div>
+        
+    </nav>
+    <div class="doct-dashboard">
+            <div class="profile-data">
+                <div class="profile-photo">
+                    <img id="profilePic" src="../images/avatar.png" alt="">
+                </div>
+                <div class="profile-info">
+                    <b id="name">Doctor Name: </b><br>
+                    <b id="designation"> Qualification: </b><br>
+                    <b id="exp">Year Of Exp: </b><br>
+                    <b id="regno"> Regd. No: </b><br>
+                    <button id="editProfile" onclick="showAddProfileData()" class="fa fa-edit">edit profile</button>
+                </div>
+            </div>
+            <div class="profileEdit" id="profileEdit">
+                <h3>Edit Account</h3>
+                <label for="Charges">Your charges per patient</label>
+                <input type="number" name="charges" id="charges" placeholder=""><br>
+                <label for="home-comfortable">Comfortable with going patients place</label>
+                <select name="home-comfortable" id="home-comfortable">
+                    <option value="no">no</option>
+                    <option value="yes">yes</option>
+                </select><br>
+                <label for="state">State</label><br>
+                <select name="state" id="state" required>
+                    <option value="">Select</option>
+                </select><br>
+                <label for="city">Your Location</label><br>
+                <input type="text" name="city" id="city" placeholder="city name" required><br>
+                <label for="pincode"> Pincode</label><br>
+                <input type="text" name="pincode" id="pincode" required><br>
+                <label for="address">Clinic Address</label><br>
+                <input type="text" name="address" id="address" placeholder="only if you own a clinic/or work in any hospital"><br>
+                <label for="Dpic">Your aadhar card</label><br>
+                <input type="file" name="Dpic" id="Dpic" required><br>
+                <p>(pdf/jpg/jpeg) format only. and not more than 100kb</p>
+                <p> * don't click signup until files successfully upload popup generates.</p>
+                <input type="text" id="profile-url" style="display: none;">
+                <button type="submit" onclick="addProfileData()">Save</button> 
+                <button type="submit" onclick="hideAddProfileData()">Cancel</button>
+
+            </div>
+            <div class="dashboard-content">
+                <div class="quick-links">
+                    <div class="nav-title"><b id="nav-title">Quick Links</b></div>
+                    <div class="but"><button id="attend-pat">Attended Patients</button></div>
+                    <div class="but"><button id="total-balance">Total Balance</button></div>
+                    <div class="cases"><a id="cases" href="">Shared Cases</a></div>
+                </div>
+                <div class="navigator">
+                    <div class="navigator-link">
+                        <div class="img-nav">
+                            <img src="../images/appointment.png" alt="">
+                        </div>
+                        <div class="link-nav"><a href=""> New Appointment</a></div>    
+                    </div>
+
+                    <div class="navigator-link">
+                        <div class="img-nav">
+                            <img src="../images/followUp.png" alt="">
+                        </div>
+                        <div class="link-nav"><a href=""> Follow Up</a></div>    
+                    </div>
+
+                    <div class="navigator-link">
+                        <div class="img-nav">
+                            <img src="../images/opd.png" alt="">
+                        </div>
+                        <div class="link-nav"><a href=""> Online OPD Appointment</a></div>    
+                    </div>
+
+                    <div class="navigator-link">
+                        <div class="img-nav">
+                            <img src="../images/share.png" alt="">
+                        </div>
+                        <div class="link-nav"><a href=""> Share Your Cases</a></div>    
+                    </div>
+
+                </div>
+                <div class="patient-area">
+                    <div class="patient">
+                        <h1>search patient</h1>
+                        <select name="search" id="search">
+                            <option value="registrationId">Regd. Id</option>
+                            <option value="username">Name</option>
+                        </select>
+                        <input type="text" name="name" id="name"><br>
+                        <button type="submit">Search</button>
+                    </div>
+                    <div class="edit-account">
+                        <h1>Manage Your Account</h1>
+                        <h3>Total No. of appointment</h3>
+                        <div id="recieved">Recieved</div>
+                        <div id="completed">Completed</div>
+                        <div id="pending">New Cases</div>
+                        <h3>View Your Balance</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer-main">
+            <div class="footer">
+                <div class="footer-content">
+                    <strong>Samchikitsa</strong><br>
+                    <a id="footer-link" href="../html/about.html">about</a><br>
+                    <a id="footer-link" href="../html/aboutH.html">about homeopathy</a><br>
+                    <a id="footer-link" href="../html/news.html">blog</a><br>
+                    <a id="footer-link" href="career.html"> career</a><br>
+                    <a id="footer-link" href="mailto: info@samchikitsa.com">support 24X7</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>for patients</strong><br>
+                    <a id="footer-link" href="searchDoctors.html">search for doctors</a><br>
+                    <a id="footer-link" href="articles.html">health articles</a><br>
+                    <a id="footer-link" href="HTC.html">consult a doctor</a><br>
+                    <a id="footer-link" href="lab.html">book a lab test</a><br>
+                    <a id="footer-link" href="BOA.html">offline appointments</a><br>
+                    <a id="footer-link" href="subscription.html">subscriptions</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>for homeopathic doctors</strong><br>
+                    <a id="footer-link" href="doctSignup.html">join samchikitsa</a><br>
+                    <a id="footer-link" href="sharecase.html">share your cases</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>for psychologists</strong><br>
+                    <a id="footer-link" href="doctpsycho.html">join samchikitsa</a><br>
+                    <a id="footer-link" href="sharecase.html">share your cases</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>social</strong><br>
+                    <a id="footer-link" href="https://www.facebook.com/Samchikitsa/">Facebook</a><br>
+                    <a id="footer-link" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai">Instagram</a><br>
+                    <a id="footer-link" href="#">Twitter</a><br>
+                    <a id="footer-link" href="#">Linkedin</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>more</strong><br>
+                    <a id="footer-link" href="../html/pp.html">privacy policies</a><br>
+                    <a id="footer-link" href="../html/tnc.html">terms & conditions</a><br>
+                    <a id="footer-link" href="../html/disclaimer.html">disclaimer</a><br>
+                </div>
+            </div>
+            <div class="footer-img">
+                <h1>samchikitsa</h1>
+                <p>Copyright &copy; 2020. All rights reserved</p>
+    
+            </div>
+        </footer>
+    <!--BLOCK CONTENT END-->
+</div>
+<script>
+    function showAddProfileData(){
+        document.getElementById("profileEdit").style.display = "block";
+    }
+    
+    function hideAddProfileData(){
+        document.getElementById("profileEdit").style.display = "none";
+    }
+</script>
+<script>
+        var i = 0;
+        var txt = 'Serving Complete Health & Well Being';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("btext").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+
+
+
+</script>
+<script>
+   
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB2MAuoYNwlnfE7D3DUFF0ksTq52inDdmY",
+    authDomain: "samchikitsa-8ae9a.firebaseapp.com",
+    databaseURL: "https://samchikitsa-8ae9a.firebaseio.com",
+    projectId: "samchikitsa-8ae9a",
+    storageBucket: "samchikitsa-8ae9a.appspot.com",
+    messagingSenderId: "151461880341",
+    appId: "1:151461880341:web:3a6fbdaa6d75229d9ee41c",
+    measurementId: "G-XGTMGR77Z4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+
+
+
+const db = firebase.firestore();
+    const auth = firebase.auth();
+    auth.onAuthStateChanged(function(user){
+        if(user){
+            db.collection('doctors').doc(user.uid).get().then(doc => {
+                if(doc.data().Reg_no == ""){
+                    alert("user don't have access to this page.")
+                    window.location.replace("doctSignup.html")
+                }
+            })
+        }
+    })
+
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        if(user.email){
+            document.getElementById("myprofile").innerHTML = user.email;
+        }
+        if(user.phone){
+            document.getElementById("myprofile").innerHTML = user.phone;
+        }
+    }
+    })
+
+    
+ var dbRef = firebase.firestore();
+    dbRef.collection('StateList').orderBy("State", "asc").get().then((snapshot) =>{
+    snapshot.docs.forEach(doc => {
+        var State = doc.data().State;
+        document.getElementById("state").innerHTML +=" <option value="+State+">"+State+" </option> <br>"
+        });
+    });
+
+
+    auth.onAuthStateChanged(function(user){
+    if(user){
+        db.collection('doctors').doc(user.uid).get().then(doc => {
+                document.getElementById("name").innerHTML += doc.data().name;
+                document.getElementById("designation").innerHTML += doc.data().qualification;
+                document.getElementById("exp").innerHTML += doc.data().experience;
+                document.getElementById("regno").innerHTML += doc.data().Reg_no;
+                document.getElementById("profilePic").src = doc.data().profilePhoto;
+
+        })
+    }else{
+        alert('no active user');
+        window.location.replace("doctSignup.html")
+    }
+}) 
+
+function signOut(){
+     auth.signOut();
+     window.location.replace("doctSignup.html")
+     alert('signed Out')
+ }
+
+
+
+
+ var fileButton = document.getElementById("Dpic");
+   fileButton.addEventListener('change', function(e){
+        var file = e.target.files[0];
+        const storageRef = firebase.storage().ref('doctors_idCard/' +file.name);
+        var uploadTask = storageRef.put(file);
+        uploadTask.on('state_changed', function(snapshot){
+            var progress = (snapshot.bytesTransfered/snapshot.totalbytes) *100;
+
+        },function(error){
+            //
+        },function(){
+            uploadTask.snapshot.ref.getDownloadURL().then( function(downloadURL){
+                console.log('File available at', downloadURL);
+                document.getElementById("profile-url").value = downloadURL; 
+                alert("id uploaded")
+            })
+        })
+
+
+    });
+ 
+
+function addProfileData(){
+    if(document.getElementById("charges").value == ""){
+            alert("Please enter amount you charge per patient")
+        }else if(document.getElementById("home-comfortable").value == ""){
+            alert("home visit field required")
+        }else if(document.getElementById("state").value == ""){
+            alert("Please select a state")
+        }else if(document.getElementById("city").value == ""){
+            alert("City required")
+        }else if(document.getElementById("pincode").value == ""){
+            alert(" Pincode required")
+        }else if(document.getElementById("pincode").value.length != 6){
+            alert(" Pincode must contain only 6 digits")
+        }else if(document.getElementById("address").value == ""){
+            alert("Address required")
+        }else if(document.getElementById("Dpic").value == ""){
+            alert("Identity required")
+        }else{
+            
+    auth.onAuthStateChanged(function(user){
+        if(user){
+            db.collection('doctors').doc(user.uid).get().then(doc =>{
+                const name = doc.data().name;
+                const regd_no = doc.data().Reg_no;
+                const exp = doc.data().experience;
+                const qualification = doc.data().qualification;
+                const profilePhoto = doc.data().profilePhoto;
+                var phone = doc.data().phone;
+                var email = doc.data().email;
+                var dob = doc.data().dob;
+                var college = doc.data().college;
+                var year_of_comp = doc.data().Year_of_completion;
+                var reg_council = doc.data().reg_council;                    
+                var certificate = doc.data().certificate;
+                   
+                return db.collection('doctors_additional_info').doc(user.uid).set({
+                        name: name,
+                        regd_no: regd_no,
+                        exp: exp,
+                        qualification: qualification,
+                        profilePhoto: profilePhoto,
+                        phone : phone,
+                        dob : dob,
+                        college : college,
+                        Year_of_completion : year_of_comp,
+                        reg_council: reg_council,
+                        certificate:certificate,
+                        state : document.getElementById("state").value,
+                        city : document.getElementById("city").value,
+                        pincode :document.getElementById("pincode").value,
+                        aadhar_card :document.getElementById("profile-url").value,
+                        home_comfortable : document.getElementById("home-comfortable").value,
+                        charges : document.getElementById("charges").value,
+                        clinic_address : document.getElementById("address").value,
+    
+                        }).then(function(){
+                            
+                        alert("profile updated successfully.");
+                        window.location.reload();
+                        })
+            })
+                
+            }
+        })
+
+        }    
+    }
+
+
+    db.collection('StateList').get().then((snapshot) =>{
+    snapshot.docs.forEach(doc => {
+        var state = doc.data().state;
+        document.getElementById("state").innerHTML +="<option value="+state+">"+state+"</option>"
+        });
+    });
+
+</script>
+</body>
+</html>
+

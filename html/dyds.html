@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    
+    <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="Stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/htc.css">   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor At Home</title>
+</head>
+<body>
+
+<div class="PC">     
+    <div class="header">
+        <div class="brand"><img class="brand-img" src="../images/logo.png" alt="logo"></div>
+        <div class="sam-title">
+            <h3> SAMCHIKITSA </h3>
+            
+            <div class="quote-bg"><b id="btext"></b></div>
+        
+        </div>
+        <div class="account">
+            <img class="avatar" src="../images/avatar.png" alt="" srcset="">  
+            <div class="account-detail">
+                <div class="account-detail-content"><a id="myprofile" onclick="ifuser()">My Profile</a></div>
+                <div class="account-detail-content"><a onclick="ifuser()">Edit User</a></div>
+                <div class="account-detail-content"><a onclick="ifuser()" onclick = signOut()>Logout</a></div>
+
+            </div> 
+        </div>
+    </div>
+    <nav>
+        <a class="nav-link active" href="../index.html">Home</a>
+        <a class="nav-link" href="about.html" >About Us</a>
+        <a class="nav-link" href="testimonial.html">Testimonials</a>
+        <a class="nav-link" href="us.html">Upcoming Services</a>
+        <a class="nav-link" id="mdh" href="#">SignUp</a>
+        
+    <div class="signupContainer">
+        <a href="signup.html"> Signup As user </a><br><hr>
+        <a href="doctSignup.html"> Signup As doctor </a> <br><hr>
+        <a href="doctPsycho.html"> Signup As psychiatrist </a>
+    </div>
+        <a class="nav-link" id="mdh2" href="#">Login</a>
+        <div class="signupContainer2">
+            <a href="login.html"> login As user </a><br><hr>
+            <a href="doctSignup.html"> login As doctor </a> <br><hr>
+            <a href="doctPsycho.html"> login As psychiatrist </a>
+        </div>
+        
+    </nav>
+
+        <div id="consult" style="margin-top: 2em;">
+            <div id="formcontainer-signup">
+                <h1 style="text-align: center;">Doctor At Your Door Step</h1>
+                    <label for="name">Name: </label><br>
+                    <input type="text" placeholder="Enter Your Name" id="name" name = "name" required><br>
+                    <label for="mobileno">Phone: </label><br>
+                    <input type="number" name="mobileno" id="mobileno" placeholder="+91 "><br>
+                    <label for="Age"> Age: </label><br>
+                    <input type="text" placeholder="Age" id="age" name ="age" required><br>
+                    <label for="gender">Gender</label><br>
+                    <select name="gender" id="gender" required>
+                        <option value="male" >Male</option>
+                        <option value="female">Female</option>
+                        <option value="others">Other</option>
+                    </select><br>
+                    <label for="address">Complete address: </label><br>
+                        <input type="text" name="address" id="address" placeholder="address"><br>
+                        <label for="city">City : </label><br>
+                        <input type="text" name="city" id="city" placeholder="city"><br>
+                        <label for="pincode">Pincode :</label><br>
+                        <input type="number" name="pincode" id="pincode" placeholder="6 digit pincode"><br>
+
+                    <label for="date">Pick Date</label><br>
+                    <input type="date" name="date" id="txtDate" placeholder="pick a suitable date"><br>
+                    <label for="lanDmark">Add Landmark</label><br>
+                    <input type="text" name="landmark" id="landmark" placeholder="school/shop/religous Place etc"><br>
+                    
+                    <h3>Amount : ₹1249</h3>
+                    <button id="rzp-button1" >Book Now</button><br>
+            </div>
+</div>
+<footer class="footer-main">
+    <div class="footer">
+        <div class="footer-content">
+            <strong>Samchikitsa</strong><br>
+            <a id="footer-link" href="../html/about.html">about</a><br>
+            <a id="footer-link" href="../html/aboutH.html">about homeopathy</a><br>
+            <a id="footer-link" href="../html/news.html">blog</a><br>
+            <a id="footer-link" href="career.html"> career</a><br>
+            <a id="footer-link" href="mailto: info@samchikitsa.com">support 24X7</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>for patients</strong><br>
+            <a id="footer-link" href="searchDoctors.html">search for doctors</a><br>
+            <a id="footer-link" href="articles.html">health articles</a><br>
+            <a id="footer-link" href="HTC.html">consult a doctor</a><br>
+            <a id="footer-link" href="lab.html">book a lab test</a><br>
+            <a id="footer-link" href="BOA.html">offline appointments</a><br>
+            <a id="footer-link" href="subscription.html">subscriptions</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>for homeopathic doctors</strong><br>
+            <a id="footer-link" href="doctSignup.html">join samchikitsa</a><br>
+            <a id="footer-link" href="sharecase.html">share your cases</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>for psychologists</strong><br>
+            <a id="footer-link" href="doctpsycho.html">join samchikitsa</a><br>
+            <a id="footer-link" href="sharecase.html">share your cases</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>social</strong><br>
+            <a id="footer-link" href="https://www.facebook.com/Samchikitsa/">Facebook</a><br>
+            <a id="footer-link" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai">Instagram</a><br>
+            <a id="footer-link" href="#">Twitter</a><br>
+            <a id="footer-link" href="#">Linkedin</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>more</strong><br>
+            <a id="footer-link" href="../html/pp.html">privacy policies</a><br>
+            <a id="footer-link" href="../html/tnc.html">terms & conditions</a><br>
+            <a id="footer-link" href="../html/disclaimer.html">disclaimer</a><br>
+        </div>
+    </div>
+    <div class="footer-img">
+        <h1>samchikitsa</h1>
+        <p>Copyright &copy; 2020. All rights reserved</p>
+
+    </div>
+</footer>
+    <!--BLOCK CONTENT END-->
+</div>
+<script>
+        var i = 0;
+        var txt = 'Serving Complete Health & Well Being';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("btext").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var dtToday =new Date();
+        
+        var month  = dtToday.getMonth()+1;
+        var day = dtToday.getDate();
+        var cday = day + 1
+        var year = dtToday.getFullYear();
+        var dey = dtToday.getDay();
+        if(month<10){
+            month = '0'+ month.toString();}
+        if(day < 10){
+            cday = '0'+ cday.toString();
+        }
+            
+        var maxDate = year + '-' +month +'-'+cday;
+        
+        $('#txtDate').attr('min', maxDate)
+
+}) 
+
+</script>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB2MAuoYNwlnfE7D3DUFF0ksTq52inDdmY",
+      authDomain: "samchikitsa-8ae9a.firebaseapp.com",
+      databaseURL: "https://samchikitsa-8ae9a.firebaseio.com",
+      projectId: "samchikitsa-8ae9a",
+      storageBucket: "samchikitsa-8ae9a.appspot.com",
+      messagingSenderId: "151461880341",
+      appId: "1:151461880341:web:3a6fbdaa6d75229d9ee41c",
+      measurementId: "G-XGTMGR77Z4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  
+    document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        if(user.email){
+            document.getElementById("myprofile").innerHTML = user.email;
+        }
+        if(user.phone){
+            document.getElementById("myprofile").innerHTML = user.phone;
+        }
+    }
+    })
+
+    function ifuser(){
+    
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        db.collection("doctors").doc(user.uid).get().then(doc =>{
+            docEmail = doc.data().email;
+            if(user.email == docEmail){
+                window.location.replace("doct-dashboard.html")  
+            }else{
+                    alert("no active doctor. Please login")
+                }
+
+        })
+        db.collection("users").doc(user.uid).get().then(doc =>{
+                Email = doc.data().email;
+                if(user.email == Email){
+                window.location.replace("profile.html")  
+                }else{
+                    alert("no active user. Please login")
+                }
+            })
+    }
+}) 
+
+}
+
+function signOut(){
+     auth.signOut();
+     window.location.replace("login.html")
+     alert('signed Out')
+ }
+
+
+
+    function bookAppointment(){
+                
+                auth.onAuthStateChanged(function(user){
+    
+                    if(user){
+                        db.collection('users').doc(user.uid).collection('doorstep').add({
+                            PatientName : document.getElementById("name").value,
+                            Mobile : document.getElementById("mobileno").value,
+                            age : document.getElementById("age").value,
+                            Gender : document.getElementById("gender").value,
+                            address : document.getElementById("address").value,
+                            City : document.getElementById("city").value,
+                            pincode: document.getElementById("pincode").value,
+                            landmark : document.getElementById("landmark").value,
+                            date : document.getElementById("txtDate").value,
+                            method : "offline Appointment" ,
+                            payment: "done" 
+    
+                        }).then(function(){
+                            
+                        db.collection('atHome').add({
+                            PatientName : document.getElementById("name").value,
+                            Mobile : document.getElementById("mobileno").value,
+                            age : document.getElementById("age").value,
+                            Gender : document.getElementById("gender").value,
+                            address : document.getElementById("address").value,
+                            City : document.getElementById("city").value,
+                            pincode: document.getElementById("pincode").value,
+                            landmark : document.getElementById("landmark").value,
+                            date : document.getElementById("txtDate").value,
+                            method : "offline Appointment",
+                            payment: "done"  
+    
+                        })
+                            alert("Appointment Booked Successfully");
+                            window.location.reload();
+                        })
+                    }else{
+                        window.location.replace("login.html")
+                    }
+                    })
+    
+                }
+                        
+    
+var options = {
+    "key":"rzp_live_DGjNWgb5gzMcg4", // Enter the Key ID generated from the Dashboard
+    "amount": "124900", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "currency": "INR",
+    "name": "Samchikitsa",
+    "description": "Pay To Complete Your Appointmnet",
+    "image": "../images/logo.png",
+    "handler": function (response){
+        bookAppointment();
+    },
+    
+    "prefill": {
+        "name": document.getElementById("name").value,
+        "email": "xyz@example.com",
+        "contact":  document.getElementById("mobileno").value,
+    },
+    "notes": {
+        "address": "Moradabad"
+    },
+    "theme": {
+        "color": "#F37254"
+    }
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+    auth.onAuthStateChanged(function(user){
+        if(user){
+            
+            if(document.getElementById("name").value == ""){
+                alert("patient name required")
+            }else if(document.getElementById("mobileno").value == ""){
+                alert("Mobile number Required")
+            }else if(document.getElementById("age").value == ""){
+                alert("age is required")
+            }else if(document.getElementById("address").value == ""){
+                alert("Address Required")
+            }else if(document.getElementById("city").value == ""){
+                alert("Please Select a City")
+            }else if(document.getElementById("pincode") == ""){
+                alert("Please Enter a valid Pincode")
+            }else if(document.getElementById("txtDate").value == ""){
+                alert("Please Select a Date")
+            }else{
+                rzp1.open();
+                e.preventDefault();
+            }
+    
+        }else{
+            alert("no active user.")
+            window.location.replace("login.html")
+        }
+    })
+}
+
+       
+
+
+</script>
+</body>
+</html>
+

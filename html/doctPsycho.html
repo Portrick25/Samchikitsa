@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samchikitsa Signup</title>
+</head>
+<body>
+
+<div class="PC">  
+    <div class="header">
+        <div class="brand"><img class="brand-img" src="../images/logo.png" alt="logo"></div>
+        <div class="sam-title">
+            <h3> SAMCHIKITSA </h3>
+            
+            <div class="quote-bg"><b id="btext"></b></div>
+        </div>
+        <div class="account">
+            <img class="avatar" src="../images/avatar.png" alt="" srcset="">  
+            <div class="account-detail">
+                <div class="account-detail-content"><a href="#">My Profile</a></div>
+                <div class="account-detail-content"><a href="#">Edit User</a></div>
+                <div class="account-detail-content"><a href="#" onclick = signOut()>Logout</a></div>
+            </div>  
+        </div>
+    </div>
+    <nav>
+        <a class="nav-link active" href="../index.html">Home</a>
+        <a class="nav-link" href="about.html" >About Us</a>
+        <a class="nav-link" href="testimonial.html">Testimonials</a>
+        <a class="nav-link" href="us.html">Upcoming Services</a>
+        <a class="nav-link" id="mdh" href="#">SignUp</a>
+        
+    <div class="signupContainer">
+        <a href="signup.html"> Signup As user </a><br><hr>
+        <a href="doctSignup.html"> Signup As doctor </a> <br><hr>
+        <a href="doctPsycho.html"> Signup As psychiatrist </a>
+    </div>
+        <a class="nav-link" id="mdh2" href="#">Login</a>
+        <div class="signupContainer2">
+            <a href="login.html"> login As user </a><br><hr>
+            <a href="doctSignup.html"> login As doctor </a> <br><hr>
+            <a href="doctPsycho.html"> login As psychiatrist </a>
+        </div>
+        
+    </nav>
+
+
+<!--BLOCK CONTENT-->
+
+<h1 style="text-align: center;text-transform: uppercase;text-shadow: 2px 2px 4px #7c7c7c; font-family: Arial, Helvetica, sans-serif;color: rgb(0, 182, 45);">Psychologist Registration</h1>
+    <div class="signup-grid-container">
+        <div class="gridcontent1">
+            <h3>Login as Psychologist</h3>
+            <div id="formcontainer-signup">
+                <div id="header"></div>
+                <input type="email" name="email" id="email" placeholder="Enter Valid Email ID" required><br>
+                <input type="password" name="passwordd" id="passwordd" placeholder="Enter Password" required><br>
+                <button onclick="signIn()" id="logIn">Login</button><br>
+            </div>
+        </div>
+    
+        <div class="gridcontent2">
+
+            <h3>Sign Up As Psychologist</h3>         
+            <div id="formcontainer-signup">
+                <input type="email" name="emailid" id="emailid" placeholder="Enter Valid Email ID" required><br>
+                <input type="password" name="password" id="password" placeholder="Create Password" required><br>               
+                <!--<input type="password" name="cpassword" id="cpassword" placeholder="Create Password" required><br> -->             
+                <input type="phone" name="phone" id="phone" placeholder="Enter Phone Number" required><br>
+                <input type="text" name="name" id="name" placeholder="Dr./Mr. | --- " required><br>
+                <label for="DOB" style="border-bottom: 0;font-size: 1em;">Date of Birth:</label><br>
+                <input type="date" name="DOB" id="DOB"  required><br>
+                <label for="Qualification" style="border-bottom: 0;font-size: 1em;">Qualification:</label><br>
+                <input name="Qualification" id="Qualification" placeholder="qualification" required><br>
+                <label for="DOB" style="border-bottom: 0;font-size: 1em;">College:</label><br>
+                <input name="college" id="college" placeholder="College Name" required><br>
+
+
+                <input type="number" name="YC" id="YC" placeholder="Year of completion" required><br>
+                <input type="text" name="RCC" id="RCC" placeholder="RCC Number " required><br>
+                <input type="text" name="RC" id="RC" placeholder="Registration Council" required><br>
+                <input type="number" name="RY" id="RY" placeholder="Registration Year" required><br>
+                <input type="number" name="YE" id="YE" placeholder="Year Of Experience" required><br>
+                <label for="profile-photo" style="border-bottom: 0;font-size: 1em;">Upload profile Photo:</label><br>
+                <input type="file" name="profile-photo" id="profile-photo" required><br>
+                <label for="certificate" style="border-bottom: 0;font-size: 1em;">Upload Certificate:</label><br>
+                <input type="file" name="certificate" id="certificate" required><br>
+                <p> * don't click signup until files upload popup generates.</p>
+                <input type="text" name="" id="url" style="display: none;">
+                <input type="text" name="" id="profile-url" style="display: none;">
+                <button type="submit" onclick="signUpD()" id="logIn">SignUp</button><br>
+                
+            </div>
+        </div>
+    </div>
+    <footer class="footer-main">
+        <div class="footer">
+            <div class="footer-content">
+                <strong>Samchikitsa</strong><br>
+                <a id="footer-link" href="../html/about.html">about</a><br>
+                <a id="footer-link" href="../html/aboutH.html">about homeopathy</a><br>
+                <a id="footer-link" href="../html/news.html">blog</a><br>
+                <a id="footer-link" href="career.html"> career</a><br>
+                <a id="footer-link" href="mailto: info@samchikitsa.com">support 24X7</a><br>
+            </div>
+            <div class="footer-content">
+                <strong>for patients</strong><br>
+                <a id="footer-link" href="searchDoctors.html">search for doctors</a><br>
+                <a id="footer-link" href="articles.html">health articles</a><br>
+                <a id="footer-link" href="HTC.html">consult a doctor</a><br>
+                <a id="footer-link" href="lab.html">book a lab test</a><br>
+                <a id="footer-link" href="BOA.html">offline appointments</a><br>
+                <a id="footer-link" href="subscription.html">subscriptions</a><br>
+            </div>
+            <div class="footer-content">
+                <strong>for homeopathic doctors</strong><br>
+                <a id="footer-link" href="doctSignup.html">join samchikitsa</a><br>
+                <a id="footer-link" href="sharecase.html">share your cases</a><br>
+            </div>
+            <div class="footer-content">
+                <strong>for psychologists</strong><br>
+                <a id="footer-link" href="doctpsycho.html">join samchikitsa</a><br>
+                <a id="footer-link" href="sharecase.html">share your cases</a><br>
+            </div>
+            <div class="footer-content">
+                <strong>social</strong><br>
+                <a id="footer-link" href="https://www.facebook.com/Samchikitsa/">Facebook</a><br>
+                <a id="footer-link" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai">Instagram</a><br>
+                <a id="footer-link" href="#">Twitter</a><br>
+                <a id="footer-link" href="#">Linkedin</a><br>
+            </div>
+            <div class="footer-content">
+                <strong>more</strong><br>
+                <a id="footer-link" href="../html/pp.html">privacy policies</a><br>
+                <a id="footer-link" href="../html/tnc.html">terms & conditions</a><br>
+                <a id="footer-link" href="../html/disclaimer.html">disclaimer</a><br>
+            </div>
+        </div>
+        <div class="footer-img">
+            <h1>samchikitsa</h1>
+            <p>Copyright &copy; 2020. All rights reserved</p>
+
+        </div>
+    </footer>
+    </div>
+            
+<script>
+        var i = 0;
+        var txt = 'Serving Complete Health & Well Being';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("btext").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+
+
+</script>
+    
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB2MAuoYNwlnfE7D3DUFF0ksTq52inDdmY",
+      authDomain: "samchikitsa-8ae9a.firebaseapp.com",
+      databaseURL: "https://samchikitsa-8ae9a.firebaseio.com",
+      projectId: "samchikitsa-8ae9a",
+      storageBucket: "samchikitsa-8ae9a.appspot.com",
+      messagingSenderId: "151461880341",
+      appId: "1:151461880341:web:3a6fbdaa6d75229d9ee41c",
+      measurementId: "G-XGTMGR77Z4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  
+const db = firebase.firestore();
+    const auth = firebase.auth();
+
+
+
+
+    var dbRef = firebase.firestore();
+    dbRef.collection('CollegeList').orderBy("college", "asc").get().then((snapshot) =>{
+    snapshot.docs.forEach(doc => {
+        var college = doc.data().college;
+        document.getElementById("college").innerHTML +=" <option value="+college+">"+college+" </option> <br>"
+        });
+    });
+  document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+// login
+function signIn(){
+    var email =  document.getElementById("email");
+    var password =  document.getElementById("passwordd");
+ 
+    const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+    promise.then(function(){
+      window.location.replace("psychoVerify.html")
+    }).catch(e =>alert(e.message));
+
+ }
+ auth.onAuthStateChanged(function(user){
+    if(user){ 
+        if(user.email){
+            document.getElementById("myprofile").innerHTML = user.email;
+        }
+        if(user.phone){
+            document.getElementById("myprofile").innerHTML = user.phone;
+        }
+    }
+    })
+
+    function ifuser(){
+    
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        db.collection("doctors").doc(user.uid).get().then(doc =>{
+            docEmail = doc.data().email;
+            if(user.email == docEmail){
+                window.location.replace("doct-dashboard.html")  
+            }else{
+                    alert("no active doctor. Please login")
+                }
+
+        })
+        db.collection("users").doc(user.uid).get().then(doc =>{
+                Email = doc.data().email;
+                if(user.email == Email){
+                window.location.replace("profile.html")  
+                }else{
+                    alert("no active user. Please login")
+                }
+            })
+    }
+}) 
+
+}
+
+
+function signOut(){
+     auth.signOut();
+     window.location.replace("login.html")
+     alert('signed Out')
+ }
+
+
+
+ // file upload and signup 
+ 
+  var fileButton = document.getElementById("certificate");
+   fileButton.addEventListener('change', function(e){
+        var file = e.target.files[0];
+        const storageRef = firebase.storage().ref('psychologist/' +file.name);
+        var uploadTask = storageRef.put(file);
+        uploadTask.on('state_changed', function(snapshot){
+            var progress = (snapshot.bytesTransfered/snapshot.totalbytes) *100;
+
+        },function(error){
+            //
+        },function(){
+            uploadTask.snapshot.ref.getDownloadURL().then( function(downloadURL){
+                console.log('File available at', downloadURL);
+                document.getElementById("url").value = downloadURL; 
+                alert("certificate uploaded")
+            })
+        })
+
+
+    });
+    
+  var profileButton = document.getElementById("profile-photo");
+  profileButton.addEventListener('change', function(e){
+        var file = e.target.files[0];
+        const storageRef = firebase.storage().ref('psychologistProfile/' +file.name);
+        var uploadTask = storageRef.put(file);
+        uploadTask.on('state_changed', function(snapshot){
+            var progress = (snapshot.bytesTransfered/snapshot.totalbytes) *100;
+
+        },function(error){
+            //
+        },function(){
+            uploadTask.snapshot.ref.getDownloadURL().then( function(downloadURL){
+                console.log('File available at', downloadURL);
+                document.getElementById("profile-url").value = downloadURL; 
+                alert("profile-photo uploaded")
+            })
+        })
+
+
+    });
+
+function signUpD(){
+   const email =  document.getElementById("emailid");
+   var password =  document.getElementById("password");
+   var cpassword = document.getElementById("cpassword");
+    
+
+//if(cpassword != password){
+ // alert("two passwords doesn't match")
+//}else{
+
+
+   const promise = auth.createUserWithEmailAndPassword(email.value, password.value).then(cred =>{
+       return db.collection('psychologist').doc(cred.user.uid).set({
+           isPsychologist : true,
+           name : document.getElementById("name").value,
+           phone : document.getElementById("phone").value,
+           dob : document.getElementById("DOB").value,
+           qualification : document.getElementById("Qualification").value,
+           college : document.getElementById("college").value,
+           Year_of_completion : document.getElementById("YC").value,
+           RCC : document.getElementById("RCC").value,
+           reg_council: document.getElementById("RC").value,
+           reg_year:document.getElementById("RY").value,
+           experience: document.getElementById("YE").value,
+           certificate:document.getElementById("url").value,
+           profilePhoto:document.getElementById("profile-url").value,
+       }).then(function(){
+        alert("signedUp Successfully");
+        window.location.reload();
+       })
+       
+   });
+   promise.catch(e =>alert(e.message));
+
+  }
+  
+
+//}
+
+</script>
+</body>
+</html>
+

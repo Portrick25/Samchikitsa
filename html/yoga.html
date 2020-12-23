@@ -1,0 +1,283 @@
+
+       <!DOCTYPE html>
+       <html lang="en">
+       <head>
+           <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+           <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+           <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+           <link rel="icon" href="../images/logo.png">
+           <link rel="stylesheet" href="../css/main.css">
+           <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+           <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+           <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+           <meta charset="UTF-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>Samchikitsa</title>
+           <style>
+               strong{
+                   font-size: 1.1em;
+                   color: green;
+               }
+               h1{
+                text-align: center;
+                color: rgb(0, 0, 148);
+                text-transform: uppercase;
+                font-family: 'Barlow Semi Condensed', sans-serif;
+                text-shadow: 2px 2px 4px #7a7a7a;
+               }
+               #Quote{
+                width: 40vw;
+                margin: auto;
+                text-align: center;
+                font-size: 1.5em;
+                text-shadow: 2px 2px 4px #b65f5f;
+                
+               }
+               #Quote p{
+                color: tomato;
+               }
+               h3{
+                   color: rgb(0, 0, 148);
+                   font-family: alata;
+               }
+               #answers p{
+                   color: rgb(99, 99, 99);
+                   font-family: Verdana, Geneva, Tahoma, sans-serif;
+               }
+               .disclaimer{
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 7px;
+               }
+               @media only screen and (max-width:800px){
+                #Quote{
+                width: 80vw;
+
+                
+               }  
+               }
+           </style>
+       </head>
+       <body>
+       
+           <div class="PC">
+               <div class="header">
+                   <div class="brand"><img class="brand-img" src="../images/logo.png" alt="logo"></div>
+                   <div class="sam-title">
+                       <h3> SAMCHIKITSA </h3>
+                       <div class="quote-bg"><b id="btext"></b></div>
+                   </div>
+                   <div class="account">
+                       <img class="avatar" src="../images/avatar.png" alt="" srcset="">  
+                       <div class="account-detail">
+                         <div class="account-detail-content"><a id="myprofile" onclick="ifuser()">My Profile</a></div>
+                         <div class="account-detail-content"><a onclick="ifuser()">Edit User</a></div>
+                         <div class="account-detail-content"><a onclick="ifuser()" onclick = signOut()>Logout</a></div>
+       
+                     </div> 
+                   </div>
+               </div>
+               <nav>
+                   <a class="nav-link active" href="../index.html">Home</a>
+                   <a class="nav-link" href="about.html" >About Us</a>
+                   <a class="nav-link" href="testimonial.html">Testimonials</a>
+                   <a class="nav-link" href="us.html">Upcoming Services</a>
+                   <a class="nav-link" id="mdh" href="#">SignUp</a>
+                   
+               <div class="signupContainer">
+                   <a href="signup.html"> Signup As user </a><br><hr>
+                   <a href="doctSignup.html"> Signup As doctor </a> <br><hr>
+                   <a href="doctPsycho.html"> Signup As psychiatrist </a>
+               </div>
+                   <a class="nav-link" id="mdh2" href="#">Login</a>
+                   <div class="signupContainer2">
+                       <a href="login.html"> login As user </a><br><hr>
+                       <a href="doctSignup.html"> login As doctor </a> <br><hr>
+                       <a href="doctPsycho.html"> login As psychiatrist </a>
+                   </div>
+                   
+               </nav>
+                   <div class="disclaimer">
+                    <h1>Yoga @ Samchikitsa</h1> 
+                    <div id="Quote">
+                        <p>
+                         "Yoga is awareness.
+                         Yoga is stillness.
+                         Yoga is peace.
+                         Yoga happens beyond the mat. 
+                         Yoga is a way of life.
+                         "Yoga is the journey of the self, through the self, to the self."
+                         -Bhagavad Gita
+                         
+                        </p>
+                    </div>
+                    <div id="questions">
+                    <h3>
+                         What is Yoga?
+                        </h3>
+                    </div>
+                    <div id="answers">
+                        <p>
+                         Derived from the Sanskrit word 'Yuj',
+                          which literally translates to "union",
+                           Yoga is the holistic approach to harmoniously 
+                           integrate the body, the mind and the spirit. The earliest 
+                           known mention of Yoga comes in Rig Veda, an ancient Indian collection of sacred texts including
+                            the rituals, practices, hymns and mantras. Today, yoga is practiced widely,
+                          all over the world, to release stress, to calm the mind, to be fit, to develop spiritually etc. 
+                        </p>
+                        <p><strong> Yoga for everyone</strong><br>
+                         Contrary to popular belief, yoga is way more than bodies attempting complicated postures or 'asanas'. Yoga is a multidimensional practice including breathing exercises or 'pranayama', meditation techniques, visualization practices, chants and yoga asanas. Start with any one or practice them all according to your comfort, you are sure to reap the benefits of Yoga. 
+                         
+                         
+                         
+                         
+                         </p>
+                        <p><strong>    Meditation and Mindfulness</strong><br>
+                         Meet our experts and begin your journey into the world of meditation and mindfulness.  Learn techniques and inculcate in your daily life ways to increase your concentration, heighten your awareness, improve attention and memory, and feel more connected with your truest self. 
+                         </p>
+                        <p><strong> Fitness and Flexibility</strong><br>
+                         Meet our experts to begin your journey into the world of fitness and flexibility. Practice exercises and yoga postures to increase mobility, strength, stamina, balance, flexibility, and to maintain an overall healthy lifestyle. 
+                         </p>
+                           </div>
+                    
+                    
+                    
+                    </div>
+                    <footer class="footer-main">
+                        <div class="footer">
+                            <div class="footer-content">
+                                <strong>Samchikitsa</strong><br>
+                                <a id="footer-link" href="../html/about.html">about</a><br>
+                                <a id="footer-link" href="../html/aboutH.html">about homeopathy</a><br>
+                                <a id="footer-link" href="../html/news.html">blog</a><br>
+                                <a id="footer-link" href="career.html"> career</a><br>
+                                <a id="footer-link" href="mailto: info@samchikitsa.com">support 24X7</a><br>
+                            </div>
+                            <div class="footer-content">
+                                <strong>for patients</strong><br>
+                                <a id="footer-link" href="searchDoctors.html">search for doctors</a><br>
+                                <a id="footer-link" href="articles.html">health articles</a><br>
+                                <a id="footer-link" href="HTC.html">consult a doctor</a><br>
+                                <a id="footer-link" href="lab.html">book a lab test</a><br>
+                                <a id="footer-link" href="BOA.html">offline appointments</a><br>
+                                <a id="footer-link" href="subscription.html">subscriptions</a><br>
+                            </div>
+                            <div class="footer-content">
+                                <strong>for homeopathic doctors</strong><br>
+                                <a id="footer-link" href="doctSignup.html">join samchikitsa</a><br>
+                                <a id="footer-link" href="sharecase.html">share your cases</a><br>
+                            </div>
+                            <div class="footer-content">
+                                <strong>for psychologists</strong><br>
+                                <a id="footer-link" href="doctpsycho.html">join samchikitsa</a><br>
+                                <a id="footer-link" href="sharecase.html">share your cases</a><br>
+                            </div>
+                            <div class="footer-content">
+                                <strong>social</strong><br>
+                                <a id="footer-link" href="https://www.facebook.com/Samchikitsa/">Facebook</a><br>
+                                <a id="footer-link" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai">Instagram</a><br>
+                                <a id="footer-link" href="#">Twitter</a><br>
+                                <a id="footer-link" href="#">Linkedin</a><br>
+                            </div>
+                            <div class="footer-content">
+                                <strong>more</strong><br>
+                                <a id="footer-link" href="../html/pp.html">privacy policies</a><br>
+                                <a id="footer-link" href="../html/tnc.html">terms & conditions</a><br>
+                                <a id="footer-link" href="../html/disclaimer.html">disclaimer</a><br>
+                            </div>
+                        </div>
+                        <div class="footer-img">
+                            <h1>samchikitsa</h1>
+                            <p>Copyright &copy; 2020. All rights reserved</p>
+                
+                        </div>
+                    </footer>
+          <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+           <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+           <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+           <script>
+               var i = 0;
+               var txt = 'Serving Complete Health & Well Being';
+               var speed = 30;
+       
+               function typeWriter() {
+                   if (i < txt.length) {
+                       document.getElementById("btext").innerHTML += txt.charAt(i);
+                       i++;
+                       setTimeout(typeWriter, speed);
+                   }
+               }
+               typeWriter();
+           </script>
+           <script src="../js/auth.js">
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyB2MAuoYNwlnfE7D3DUFF0ksTq52inDdmY",
+              authDomain: "samchikitsa-8ae9a.firebaseapp.com",
+              databaseURL: "https://samchikitsa-8ae9a.firebaseio.com",
+              projectId: "samchikitsa-8ae9a",
+              storageBucket: "samchikitsa-8ae9a.appspot.com",
+              messagingSenderId: "151461880341",
+              appId: "1:151461880341:web:3a6fbdaa6d75229d9ee41c",
+              measurementId: "G-XGTMGR77Z4"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+          
+           document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+           const auth = firebase.auth();
+
+
+           auth.onAuthStateChanged(function(user){
+    if(user){ 
+        if(user.email){
+            document.getElementById("myprofile").innerHTML = user.email;
+        }
+        if(user.phone){
+            document.getElementById("myprofile").innerHTML = user.phone;
+        }
+    }
+    })
+
+    function ifuser(){
+    
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        db.collection("doctors").doc(user.uid).get().then(doc =>{
+            docEmail = doc.data().email;
+            if(user.email == docEmail){
+                window.location.replace("doct-dashboard.html")  
+            }else{
+                    alert("no active doctor. Please login")
+                }
+
+        })
+        db.collection("users").doc(user.uid).get().then(doc =>{
+                Email = doc.data().email;
+                if(user.email == Email){
+                window.location.replace("profile.html")  
+                }else{
+                    alert("no active user. Please login")
+                }
+            })
+    }
+}) 
+
+}
+
+
+function signOut(){
+     auth.signOut();
+     window.location.replace("login.html")
+     alert('signed Out')
+ }
+
+
+       
+           </script>
+       </body>
+       </html>
+       
+       

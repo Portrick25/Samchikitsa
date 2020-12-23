@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samchikitsa</title>
+        
+        <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyB2MAuoYNwlnfE7D3DUFF0ksTq52inDdmY",
+              authDomain: "samchikitsa-8ae9a.firebaseapp.com",
+              databaseURL: "https://samchikitsa-8ae9a.firebaseio.com",
+              projectId: "samchikitsa-8ae9a",
+              storageBucket: "samchikitsa-8ae9a.appspot.com",
+              messagingSenderId: "151461880341",
+              appId: "1:151461880341:web:3a6fbdaa6d75229d9ee41c",
+              measurementId: "G-XGTMGR77Z4"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+                   const auth = firebase.auth();
+                   const db = firebase.firestore();
+
+function signOut(){
+ auth.signOut();
+ window.location.replace("html/login.html")
+ alert('signed Out')
+}
+function ifuser(){
+    auth.onAuthStateChanged(function(user){
+        if(user){
+
+    }else{
+        document.getElementsByClassName(".account-detail").style.display = "none"  
+    }
+    })
+}
+
+            
+            var i = 0;
+    // Create a reference under which you want to list
+    var storageRef = firebase.storage().ref();
+    storageRef.child('advertisement/').listAll().then(function(result){
+        result.items.forEach(function(imageRef){
+           // console.log(" image reference" + imageRef.toString());
+           i++;
+           displayImage(i, imageRef);
+        });
+    });
+    
+    function displayImage(row, images){
+        images.getDownloadURL().then(function(url){
+            document.getElementById("advertisement").innerHTML += '<img class="mySlides" src = "'+url+'">'
+        })
+    }
+
+
+    var dbRef = firebase.firestore();
+    dbRef.collection('news').get().then((snapshot) =>{
+    snapshot.docs.forEach(doc => {
+        var headline = doc.data().headline;
+        var link = doc.data().link;
+        document.getElementById("news-data").innerHTML +='<li><div class="ref1"><a class="news-ref" href="'+link+'">'+headline+'</a><br></div></li>'
+        });
+    });
+        </script>
+</head>
+<body>
+
+    <div class="PC">
+      
+        <div class="header">
+            <div class="brand"><img class="brand-img" src="images/logo.png" alt="logo"></div>
+            <div class="sam-title">
+                <h3> SAMCHIKITSA </h3>
+                <div class="quote-bg"><b id="btext"></b></div>
+            </div>
+            <div class="account">
+                <img class="avatar" src="images/avatar.png" alt="" srcset="">  
+                <div class="account-detail">
+                    <div class="account-detail-content"><a id="myprofile" onclick="ifuser()">My Profile</a></div>
+                    <div class="account-detail-content"><a onclick="ifuser()">Edit User</a></div>
+                    <div class="account-detail-content"><a onclick="ifuser()">Logout</a></div>
+
+                </div>
+            </div>
+            </div>
+        </div>
+            <nav>
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="html/about.html" >About Us</a>
+                <a class="nav-link" href="html/testimonial.html">Testimonials</a>
+                <a class="nav-link" href="html/us.html">Upcoming Services</a>
+                <a class="nav-link" id="mdh" href="#">SignUp</a>
+                
+            <div class="signupContainer">
+                <a href="html/signup.html"> Signup As user </a><br><hr>
+                <a href="html/doctSignup.html"> Signup As doctor </a> <br><hr>
+                <a href="html/doctPsycho.html"> Signup As psychiatrist </a>
+            </div>
+                <a class="nav-link" id="mdh2" href="#">Login</a>
+                <div class="signupContainer2">
+                    <a href="html/login.html"> login As user </a><br><hr>
+                    <a href="html/doctSignup.html"> login As doctor </a> <br><hr>
+                    <a href="html/doctPsycho.html"> login As psychiatrist </a>
+                </div>
+                
+            </nav>
+
+<div id="header"></div>
+            <div class="block">
+                       
+                <div class="side-left-nav">
+                    <div class="news-feeds">
+                        <h3>News and Feeds</h3>
+                        <ul id="news-data">
+                        
+                        
+                    </ul>
+                    </div>
+
+                    
+                    <div class="contact-us">
+                        <h3>Contact Us</h3>
+                        <div class="ref2"><a class="fa fa-facebook" href="https://www.facebook.com/Samchikitsa/"><span>  |  </span>Facebook</a><br></div>
+                        <div class="ref2"><a class="fa fa-instagram" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai"><span>  |  </span>Instagram</a><br></div>
+                        <div class="ref2"><a class="fa fa-linkedin" href="https://www.linkedin.com/in/ritik-jha-142836150/"><span>  |  </span> Linkedin</a><br></div>
+                        <div class="ref2"><a type="email" class=" fa fa-envelope" href="mailto: info@samchikitsa.com"><span>  |  </span>Gmail</a><br></div>
+                        <div class="ref2"><a class="fa fa-phone" href="tel:+918527301746"><span>  |  </span>Phone</a><br></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="center-nav2">
+                        <div class="w3-content w3-display-container">
+                            <div id="advertisement">
+                                <img class="mySlides" src="images/adv-3.jpeg" alt="">
+
+                            </div>
+                        
+                            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                        </div>
+                        
+
+                    </div>
+                    <div>
+                        <h1 id="h1">OUR SERVICES </h1>
+                        <div class="center-nav">
+                            
+                            <a class="hom-tel" href="html/htc.html">homeopathic Tele - Consultation</a>
+                            <a class="book-app" href="html/oflineOPD.html">book an offline appointment</a>
+                            <a class="book-lab" href="html/lab.html">book a lab test</a>
+                            <a class="doct-at-door" href="html/dyds.html">doctor at your door step</a>
+
+                            <a class="yoga" href="#">yoga</a>
+                            <a class="gym" href="#">Fitness At A Click</a>
+                            <a class="dauw" href="html/dauw.html">personalised diet plan</a>
+                            <a class="dauw" href="#">mental health consultation</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="side-right-nav">
+                    
+                    <div class="corners">
+                        <h1>corner</h1>
+                        <div class="ref"><a  href="html/doctSignup.html"><h2>corner for homeopathic physicians</h2></a></div>
+                        <div class="ref"><a  href="html/doctPsycho.html"><h2>corner for psychiatrist</h2></a></div>
+                        <div class="ref"><a href=""><h2>corner for students</h2></a></div>
+                        <div class="ref"><a href="html/aboutH.html"><h2>about homeopathy</h2></a></div>
+                    </div>
+                </div>
+
+
+            </div>
+        <footer class="footer-main">
+            <div class="footer">
+                <div class="footer-content">
+                    <strong>Samchikitsa</strong><br>
+                    <a id="footer-link" href="html/about.html">about</a><br>
+                    <a id="footer-link" href="html/aboutH.html">about homeopathy</a><br>
+                    <a id="footer-link" href="html/news.html">blog</a><br>
+                    <a id="footer-link" href="html/career.html"> career</a><br>
+                    <a id="footer-link" href="mailto: info@samchikitsa.com">support 24X7</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>for patients</strong><br>
+                    <a id="footer-link" href="html/searchDoctors.html">search for doctors</a><br>
+                    <a id="footer-link" href="articles.html">health articles</a><br>
+                    <a id="footer-link" href="html/htc.html">consult a doctor</a><br>
+                    <a id="footer-link" href="html/lab.html">book a lab test</a><br>
+                    <a id="footer-link" href="html/BOA.html">offline appointments</a><br>
+                    <a id="footer-link" href="html/subscription.html">subscriptions</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>for homeopathic doctors</strong><br>
+                    <a id="footer-link" href="html/doctSignup.html">join samchikitsa</a><br>
+                    <a id="footer-link" href="html/sharecase.html">share your cases</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>for psychologists</strong><br>
+                    <a id="footer-link" href="html/doctPsycho.html">join samchikitsa</a><br>
+                    <a id="footer-link" href="html/sharecase.html">share your cases</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>social</strong><br>
+                    <a id="footer-link" href="https://www.facebook.com/Samchikitsa/">Facebook</a><br>
+                    <a id="footer-link" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai">Instagram</a><br>
+                    <a id="footer-link" href="#">Twitter</a><br>
+                    <a id="footer-link" href="#">Linkedin</a><br>
+                </div>
+                <div class="footer-content">
+                    <strong>more</strong><br>
+                    <a id="footer-link" href="html/pp.html">privacy policies</a><br>
+                    <a id="footer-link" href="html/tnc.html">terms & conditions</a><br>
+                    <a id="footer-link" href="html/disclaimer.html">disclaimer</a><br>
+                </div>
+            </div>
+            <div class="footer-img">
+                <h1>samchikitsa</h1>
+                <p>Copyright &copy; 2020. All rights reserved</p>
+
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script>
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+var i;
+var x = document.getElementsByClassName("mySlides");
+if (n > x.length) {slideIndex = 1}
+if (n < 1) {slideIndex = x.length}
+for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+}
+x[slideIndex-1].style.display = "block";  
+}
+
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+var i;
+var x = document.getElementsByClassName("mySlides");
+for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+}
+myIndex++;
+if (myIndex > x.length) {myIndex = 1}    
+x[myIndex-1].style.display = "block";  
+setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+    </script>
+
+    <script>
+        var i = 0;
+        var txt = 'Serving Complete Health & Well Being';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("btext").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+typeWriter();
+
+    </script>
+<script>
+
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB2MAuoYNwlnfE7D3DUFF0ksTq52inDdmY",
+      authDomain: "samchikitsa-8ae9a.firebaseapp.com",
+      databaseURL: "https://samchikitsa-8ae9a.firebaseio.com",
+      projectId: "samchikitsa-8ae9a",
+      storageBucket: "samchikitsa-8ae9a.appspot.com",
+      messagingSenderId: "151461880341",
+      appId: "1:151461880341:web:3a6fbdaa6d75229d9ee41c",
+      measurementId: "G-XGTMGR77Z4"
+    };
+
+    document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+   
+
+        auth.onAuthStateChanged(function(user){
+    if(user){ 
+        if(user.email){
+            document.getElementById("myprofile").innerHTML = user.email;
+        }
+        if(user.phone){
+            document.getElementById("myprofile").innerHTML = user.phone;
+        }
+    }
+    })
+
+
+
+    function ifuser(){
+    
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        db.collection("doctors").doc(user.uid).get().then(doc =>{
+            docEmail = doc.data().email;
+            if(user.email == docEmail){
+                window.location.replace("html/doct-dashboard.html")  
+            }else{
+                    alert("no active doctor. Please login")
+                }
+
+        })
+        db.collection("users").doc(user.uid).get().then(doc =>{
+                Email = doc.data().email;
+                if(user.email == Email){
+                window.location.replace("html/profile.html")  
+                }else{
+                    alert("no active user. Please login")
+                }
+            })
+    }
+}) 
+
+}
+
+
+</script>
+</body>
+</html>
+

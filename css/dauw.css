@@ -1,0 +1,49 @@
+.blogs{
+    margin: 1em;
+    padding: 1em;
+
+}
+.blogs h1{
+        font-family: roboto;
+        font-style:bold;
+        text-align: center;
+        margin: 1em;
+}
+.blogs label{
+    border:0;
+}
+.dauw-form{
+    width: 50vw;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1em;
+}
+.dauw-form p{
+    font-size: 1.4em;
+}
+.dauw-form select{
+    background-color: transparent;
+    width: auto;
+}
+.dauw-form button{
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 1.5em;
+    font-family: roboto;
+    background-color: rgb(3, 3, 119);
+    color: white;
+    border: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    
+    text-shadow: 2px 2px 4px #000000;
+}
+.dauw-form button:hover{
+    background-color: tomato;
+}
+
+@media only screen and (max-width:800px){
+    .dauw-form{
+        width: 80vw;
+        margin: 0.5em;
+    }
+}

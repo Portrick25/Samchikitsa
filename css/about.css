@@ -1,0 +1,139 @@
+.about-img img{
+    position: fixed;
+    width: 100vw;
+    opacity: 0.8;
+    filter: grayscale(70%);
+    z-index: -1;
+    margin-top:-30vh ;
+}
+
+#quote{
+    color: white;
+    font-size:2em ;
+    width: 30vw;
+    text-shadow: 2px 2px 4px #000000;
+    text-align:center;
+    margin: auto;
+    text-transform: capitalize;
+}
+.about-content{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 1em;
+    padding: 1em;
+}
+.aboutcontent-data{
+    width: 40vw;
+    margin: auto;
+    margin-top: 1em;
+    padding: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:rgb(210, 240, 213);
+    border-radius: 7px;
+}
+.aboutcontent-data h2{
+    color:tomato;
+    font-size:2.5em ;
+    text-shadow: 2px 2px 4px #000000;
+    margin: auto;
+    text-transform: capitalize;
+    font-family:'Barlow Semi Condensed', sans-serif;;
+}
+.aboutcontent-data p{
+    color: rgb(87, 85, 85);
+    font-size:1.3em;
+    font-family: alata;
+}
+.imgg img{
+    width: 40vw;
+    height: 50vh;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.gallery{
+    text-align: center;
+    margin: 1em;
+}
+.gallery h1{
+    color: white;
+    font-size:3em ;
+    width: 30vw;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    text-align:center;
+    margin: auto;
+    
+    text-transform: capitalize;
+}
+.galleryImages{
+    margin: 0.2em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.image-data{
+    max-width: 30vw;
+    padding: 0.2em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+@media only screen and (max-width:800px){
+    .about-img img{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0.8;
+        filter: grayscale(70%);
+        z-index: -1;
+        margin-top:-30vh ;
+    }
+    
+    #quote{
+        font-size:1.5em ;
+        width: 70vw;
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: auto;
+        padding: 1em;
+    }
+    .aboutcontent-data{
+        width: 80vw;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .aboutcontent-data h2{
+
+        font-size:2em ;
+
+    }
+    .aboutcontent-data p{
+        font-size:1.1em;
+    }
+    .imgg img{
+        display: none;
+    }
+    .gallery{
+        margin: 0;
+    }
+    
+    .gallery h1{
+        font-size:2.5em ;
+        width: 80vw;
+
+    }
+    .galleryImages{
+        margin: 1em;
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .image-data{
+        max-width: 80vw;
+        padding: 0.4em;
+    }
+    
+}

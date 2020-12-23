@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    <link rel="icon" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samchikitsa</title>
+</head>
+<body>
+    <div class="header">
+        <div class="brand"><img class="brand-img" src="../images/logo.png" alt="logo"></div>
+        <div class="sam-title">
+            <h3> SAMCHIKITSA </h3>
+            <div class="quote-bg"><b id="btext"></b></div>
+        </div>
+        <div class="account">
+            <img class="avatar" src="../images/avatar.png" alt="" srcset="">  
+            <div class="account-detail">
+                <div class="account-detail-content"><a id="myprofile" onclick="ifuser()">My Profile</a></div>
+                <div class="account-detail-content"><a onclick="ifuser()">Edit User</a></div>
+                <div class="account-detail-content"><a onclick="ifuser()" onclick = signOut()>Logout</a></div>
+
+            </div> 
+        </div>
+    </div>
+    <nav>
+        <a class="nav-link active" href="../index.html">Home</a>
+        <a class="nav-link" href="about.html" >About Us</a>
+        <a class="nav-link" href="testimonial.html">Testimonials</a>
+        <a class="nav-link" href="us.html">Upcoming Services</a>
+        <a class="nav-link" id="mdh" href="#">SignUp</a>
+        
+    <div class="signupContainer">
+        <a href="signup.html"> Signup As user </a><br><hr>
+        <a href="doctSignup.html"> Signup As doctor </a> <br><hr>
+        <a href="doctPsycho.html"> Signup As psychiatrist </a>
+    </div>
+        <a class="nav-link" id="mdh2" href="#">Login</a>
+        <div class="signupContainer2">
+            <a href="login.html"> login As user </a><br><hr>
+            <a href="doctSignup.html"> login As doctor </a> <br><hr>
+            <a href="doctPsycho.html"> login As psychiatrist </a>
+        </div>
+        
+    </nav>
+        <div class="testimonial">
+                <div class="testimonial-content">
+                    <div class=" user-content">
+                        <div class="testimonial-img">
+                            <img src="../images/poojaSharma.jpeg"" alt="pooja Sharma">
+                        </div>
+                        <div class="detail">
+                            <b>Pooja Sharma</b><br>
+                            <b>AGE: 35</b><br>
+                            <b>Deputy General Manager</b>
+                        </div>
+                    </div>
+                    <hr>
+                    <p id="t-para"> I consulted on SAMCHIKITSA in the month of April with severe Endometriosis and ovarian cysts.
+                         doctor patiently heard my case and took all details. We started the treatment after due diligence from Doctors side.
+                        The best part about medication is that they does not wean you off immediately from any allopathy and supportive medicines that you might be on, but helps wean it off over a couple of weeks to ensure ur body is ready to adapt to Samchikitsa.
+                         It's been over 3 months and my cyst size has reduced and I feel way better then before. Thank you SAMCHIKITSA</p>
+                    
+                    
+                </div>
+                <div class="testimonial-content">
+                        <div class=" user-content">
+                            <div class="testimonial-img">
+                                <img src="../images/hemantSharma.jpeg" alt="Hemant">
+                            </div>
+                            <div class="detail">
+                                <b>Hemant</b><br>
+                                <b>AGE: 30</b><br>
+                                <b>Director and Co-founder <br>(StemDuniya)</b><br>
+                            </div>
+                        </div>
+                    <hr>
+                    <p id="t-para">I was suffering from fungal infection on my groin last 1 year 
+                        I had tried various allaopathy treatment but the outcome was not satisfying enough. Mine infection kept reoccuring
+                        Three months back i shifted to homeopathy through samschikitsa and in this little time 
+                        i have seen a drastic improvement. </p>
+                    
+                    
+                </div>
+                <div class="testimonial-content">
+                    <div class=" user-content">
+                        <div class="testimonial-img">
+                            <img src="../images/ramShigh.jpg" alt="Ramsingh">
+                        </div>
+                        <div class="detail">
+                            <b>Ram Singh</b><br>
+                            <b>AGE: 72</b><br>
+                            <b>Retd. Teacher</b>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    <p id="t-para"> मैं काफी लंबे समय से पाइल्स की परेशानी, मधुमेह के रोग  से परेशान था उम्र के साथ साथ जोड़ो और मांसपेशियों में अक्सर दर्द रहता था SAMCHIKITSA द्वारा दी गई दवाई और खान पान की सलाह और व्ययाम परामर्श की वजह से मेरी परेशानीयो में काफि सुधार है मैं samchikitsa का तह दिल से धन्यबाद देता हूं
+                    </p>
+                    
+                    
+                </div>
+                <div class="testimonial-content">
+                    <div class="user-content">
+                        <div class="testimonial-img">
+                            <img src="../images/meherDebral.jpg" alt="meher Debral">
+                        </div>
+                        <div class="detail">
+                            <b>Meher</b><br>
+                            <b>AGE: 24</b><br>
+                            <b>Event Manager</b>
+                        </div>
+                    </div>
+                    <hr>
+                    <p id="t-para">I had a wonderful first time experience with Samchikitsa. From the ease of online consultation to contact less delivery of the medicines, everything was seamless. The regular follow ups from the doctor's end on my health and concerned problem displayed great efficiency and seriousness of the doctor. 
+                    </p>
+                       <p id="t-para1"> I have dealt with severe acne issues for majority of my young hood. And not only did it make me conscious about my self but also had a great impact on my confidence. Getting my treatment done from Samchikitsa was probably the best thing that happened in 2020, because not only did I manage to get a rock solid solution to my problem but, also got a considerable boost in my confidence after taking multiple sessions from their mental health practitioners. </p>
+                       
+                </div>
+                <div class="testimonial-content">
+                    <div class=" user-content">
+                        <div class="testimonial-img">
+                            <img src="../images/rajniChaudhary.jpg" alt="">
+                        </div>
+                        <div class="detail">
+                            <b>Rajni Chaudhary</b><br>
+                            <b>Age: 55</b><br>
+                            <b>Home Maker</b>
+                        </div>
+                    </div>
+                    <hr>
+                    <p id="t-para">I was always a sceptic of homeopathic medicine. But the approach to tackling my problem was great. Samchikitsa helped me to create my diet plan which was extremely efficient. The effect of medicine that was given to me was so great. It helped me when my health was slipping the most. The prescription is working really well for me.
+                    </p>
+                    
+                    
+                </div>
+                <div class="testimonial-content">
+                    <div class=" user-content">
+                        <div class="testimonial-img">
+                            <img src="../images/kavitaSharma.jpg" alt="kavita">
+                        </div>
+                        <div class="detail">
+                            <b>Kavita Sharma</b><br>
+                            <b>AGE: 62</b><br>
+                            <b>House Wife</b>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    <p id="t-para">I was facing high blood pressure issues with blockage in minor arteries
+                         that had out me on Allopathic medicines 
+                        for a long time which had their side effects on me.
+                         Everyday I was facing some or the other issue. 
+                        I consulted in SAMCHIKITSA and began my treatment in  December 2019.
+                         My blood pressure is now in control and all my daily issues have subsided.
+                          healing and treatment plan included walking and breathing exercises to be done everyday and 
+                        the Samchikitsa medicines along with these exercises have brought great relief in my life.
+                    </p>
+                    
+                    
+                </div>
+                <div class="testimonial-content">
+                    <div class=" user-content">
+                        <div class="testimonial-img">
+                            <img src="" alt="pragyan">
+                        </div>
+                        <div class="detail">
+                            <b>Pragyan Bahera</b><br>
+                            <b>AGE: 28</b><br>
+                            <b>Director and Founder <br> Safe Space Co. </b>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    <p id="t-para">Samchikitsa is nothing less than miraculous.
+                         With faith in their practice, in depth knowledge of medical cases, prompt diagnosis
+                          and treatment, the doctors at Samchikitsa proved to be my saviors.
+                           I had an old knee injury which kept hurting even after 5 years but with their treatment 
+                           I started feeling much better and so soon. The best part is that they 
+                           always follow up with their patients. It means they care and that's what makes sincere medical practitioners. I hope I don't fall sick again but if I do I will always come back to Samchikitsa for my treatment.
+                    </p>
+                    
+                    
+                </div>
+            </div>
+            <footer class="footer-main">
+                <div class="footer">
+                    <div class="footer-content">
+                        <strong>Samchikitsa</strong><br>
+                        <a id="footer-link" href="../html/about.html">about</a><br>
+                        <a id="footer-link" href="../html/aboutH.html">about homeopathy</a><br>
+                        <a id="footer-link" href="../html/news.html">blog</a><br>
+                        <a id="footer-link" href="career.html"> career</a><br>
+                        <a id="footer-link" href="mailto: info@samchikitsa.com">support 24X7</a><br>
+                    </div>
+                    <div class="footer-content">
+                        <strong>for patients</strong><br>
+                        <a id="footer-link" href="searchDoctors.html">search for doctors</a><br>
+                        <a id="footer-link" href="articles.html">health articles</a><br>
+                        <a id="footer-link" href="HTC.html">consult a doctor</a><br>
+                        <a id="footer-link" href="lab.html">book a lab test</a><br>
+                        <a id="footer-link" href="BOA.html">offline appointments</a><br>
+                        <a id="footer-link" href="subscription.html">subscriptions</a><br>
+                    </div>
+                    <div class="footer-content">
+                        <strong>for homeopathic doctors</strong><br>
+                        <a id="footer-link" href="doctSignup.html">join samchikitsa</a><br>
+                        <a id="footer-link" href="sharecase.html">share your cases</a><br>
+                    </div>
+                    <div class="footer-content">
+                        <strong>for psychologists</strong><br>
+                        <a id="footer-link" href="doctpsycho.html">join samchikitsa</a><br>
+                        <a id="footer-link" href="sharecase.html">share your cases</a><br>
+                    </div>
+                    <div class="footer-content">
+                        <strong>social</strong><br>
+                        <a id="footer-link" href="https://www.facebook.com/Samchikitsa/">Facebook</a><br>
+                        <a id="footer-link" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai">Instagram</a><br>
+                        <a id="footer-link" href="#">Twitter</a><br>
+                        <a id="footer-link" href="#">Linkedin</a><br>
+                    </div>
+                    <div class="footer-content">
+                        <strong>more</strong><br>
+                        <a id="footer-link" href="../html/pp.html">privacy policies</a><br>
+                        <a id="footer-link" href="../html/tnc.html">terms & conditions</a><br>
+                        <a id="footer-link" href="../html/disclaimer.html">disclaimer</a><br>
+                    </div>
+                </div>
+                <div class="footer-img">
+                    <h1>samchikitsa</h1>
+                    <p>Copyright &copy; 2020. All rights reserved</p>
+        
+                </div>
+            </footer>
+</div>
+   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+    <script>
+
+        var i = 0;
+        var txt = 'Serving Complete Health & Well Being';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("btext").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+    </script>
+    <script src="../js/auth.js">
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyC1SSuF6ibJw6vpzbb38WDVBl2f4EWXYJY",
+        authDomain: "samchikitsa-f6d9b.firebaseapp.com",
+        databaseURL: "https://samchikitsa-f6d9b.firebaseio.com",
+        projectId: "samchikitsa-f6d9b",
+        storageBucket: "samchikitsa-f6d9b.appspot.com",
+        messagingSenderId: "196670220970",
+        appId: "1:196670220970:web:201a0e8a9cce3cefb27ed3",
+        measurementId: "G-TBY5QYXRB6"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+    const auth = firebase.auth();
+
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        if(user.email){
+            document.getElementById("myprofile").innerHTML = user.email;
+        }
+        if(user.phone){
+            document.getElementById("myprofile").innerHTML = user.phone;
+        }
+    }
+    })
+
+function ifuser(){
+    
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        window.location.replace("profile.html")
+    }else{
+        window.location.replace("login.html")
+    }
+}) 
+
+}
+
+
+function signOut(){
+     auth.signOut();
+     window.location.replace("login.html")
+     alert('signed Out')
+ }
+
+
+</script>
+</body>
+</html>
+

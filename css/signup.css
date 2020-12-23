@@ -1,0 +1,288 @@
+.signup-grid-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 30vw auto;
+    width: 94vw;
+    margin-left: 3vw;
+    margin-top: 1em;
+
+}
+.signup-grid-container1{
+    width: 60vw;
+    margin: auto;
+    text-align: center;
+}
+
+.gridcontent1{
+    margin-top: 1em;
+    
+}
+
+
+.gridcontent2{
+    position: relative;
+    border-left: solid rgb(114, 113, 113) 1px;
+    
+}
+
+
+
+.gridcontent1 h3, .gridcontent2 h3, .gridcontent3 h3{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-size: 1.5em;
+    margin-left: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+
+#google-button, #fb, #phone-login{
+    min-width: 27vw;
+    text-align: center;
+    margin: 0.4em;
+    padding: 0.3em;
+    font-size: 1.2em;
+    color: white;
+    border:0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+#google-button span, #fb span, #phone-login span{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#google-button{
+    background-color: rgba(255, 1, 1, 0.904);
+}
+
+#fb{
+    background-color: rgb(16, 16, 216);
+}
+#phone-login{
+    background-color: rgb(7, 126, 47);
+}
+
+
+#email,#password,#cpassword,#number, #verificationCode, .gridcontent2 input, .gridcontent1 input, .gridcontent2 select{
+    font-size: 1em;
+    width: 80%;
+    padding-left: 3mm;
+    border-bottom: solid grey 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+    margin-bottom: 1em;
+    margin-top: 0.4em;
+}
+
+#signup,#logIn, #phoneAuth,#codeverify{
+    color: white;
+    background-color: rgb(7, 5, 116);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0;
+    border-radius: 5px;
+    margin: 1em;
+    font-size: 1.4em;
+    padding: 0.2em 0.5em 0.2em 0.5em ;
+    
+}
+
+#formcontainer-signup{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em;
+    background-color: transparent;
+    margin-left: 0.5em;
+    margin-right:0.5em ;
+    border-radius: 7px;
+}
+
+#formcontainer-signup p{
+    text-align: center;
+    font-size: 1.1em;
+}
+#formcontainer-signup label{
+    font-size: 1.2em;
+    
+    padding: 0.2em 0.5em 0.2em 0.5em ;
+    margin-top: 1em;
+    font-family:'Barlow Semi Condensed', sans-serif ;
+    
+}
+
+#google-button:hover, #fb:hover, #signup:hover, #phoneAuth:hover,#codeverify:hover{
+    opacity: 0.8;
+}
+
+
+.testimonial{
+    margin: 1em;
+    padding: 1em;
+    display: grid;
+    border-radius: 7px;
+    grid-template-columns:auto auto auto ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.testimonial-content{
+    width: 30vw;
+    margin: auto;
+    margin-top:1em ;
+    margin-bottom:1em ;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.user-content{
+    display: grid;
+    padding: 1em;
+    grid-template-columns: auto auto;
+}
+.testimonial-img, .detail{
+    margin: 0.5em;
+}
+
+.testimonial img{
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.testimonial b{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1em;
+    margin-top:0.3em ;
+    color: rgb(2, 8, 90);
+}
+.testimonial hr{
+    margin: 0.3em; color: grey;
+}
+.testimonial button{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    display: inline-block;
+    bottom: 0px;
+    margin: 10px;
+    display: inline-block;
+    
+}
+
+#t-para, #t-para1{
+    text-align: left;
+    padding: 1em;
+    color: rgb(80, 77, 77);
+    font-family: alata;
+    font-size:1em ;
+}
+
+/*  college list search styling */
+.dropbtn {
+    font-size: 1.2em;
+    min-width: 50vw;
+    text-align: left;
+    padding-bottom: 2mm;
+    padding-left: 3mm;
+    border-bottom: solid grey 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+    margin-top: 1em;
+    margin: 0.3em;
+    cursor: pointer;
+  }
+  
+
+  
+  #myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myInput:focus {outline: 3px solid #ddd;}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .dropdown-content strong {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown strong:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+  
+@media only screen and (max-width:800px){
+.gridcontent2 h3, .gridcontent1 h3{
+    font-size: 1.2em;
+    margin-left: 0cm;
+}
+.testimonial{
+    grid-template-columns: auto auto;
+}
+.testimonial-content{
+    width: 40vw;
+}
+
+.gridcontent2{
+    position: relative;
+    border-left: solid rgb(114, 113, 113) 0px;
+    
+}
+}
+@media only screen and (max-width:600px){
+    .signup-grid-container{
+        position: relative;
+        display: grid;
+        grid-template-columns: 90vw;
+        width: 94vw;
+        margin-left: 3vw;
+        margin-top: 1em;
+    
+    }
+    .gridcontent2{
+        position: relative;
+        border-left: solid rgb(114, 113, 113) 0px;
+        
+    }
+    .signup-grid-container1{
+        width: 90vw;
+        margin: auto;
+        text-align: center;
+    }
+    .testimonial{
+        grid-template-columns: auto;
+    }
+    .testimonial-content{
+        width: 80vw;}
+    }
+
+ 
+    .disclaimer img{
+        max-width: 70vw;
+    }

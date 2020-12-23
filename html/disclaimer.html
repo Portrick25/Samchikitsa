@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/boa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samchikitsa Signup</title>
+</head>
+<body>
+
+<div class="PC">   
+    <div class="header">
+        <div class="brand"><img class="brand-img" src="../images/logo.png" alt="logo"></div>
+        <div class="sam-title">
+            <h3> SAMCHIKITSA </h3>
+            
+            <div class="quote-bg"><b id="btext"></b></div>
+        </div>
+        <div class="account">
+            <img class="avatar" src="../images/avatar.png" alt="" srcset="">  
+            <div class="account-detail">
+                <div class="account-detail-content"><a id="myprofile" onclick="ifuser()">My Profile</a></div>
+                <div class="account-detail-content"><a onclick="ifuser()">Edit User</a></div>
+                <div class="account-detail-content"><a onclick="ifuser()" onclick = signOut()>Logout</a></div>
+
+            </div>
+        </div>
+    </div>
+       
+    <nav>
+        <a class="nav-link active" href="../index.html">Home</a>
+        <a class="nav-link" href="about.html" >About Us</a>
+        <a class="nav-link" href="testimonial.html">Testimonials</a>
+        <a class="nav-link" href="us.html">Upcoming Services</a>
+        <a class="nav-link" id="mdh" href="#">SignUp</a>
+        
+    <div class="signupContainer">
+        <a href="signup.html"> Signup As user </a><br><hr>
+        <a href="doctSignup.html"> Signup As doctor </a> <br><hr>
+        <a href="doctPsycho.html"> Signup As psychiatrist </a>
+    </div>
+        <a class="nav-link" id="mdh2" href="#">Login</a>
+        <div class="signupContainer2">
+            <a href="login.html"> login As user </a><br><hr>
+            <a href="doctSignup.html"> login As doctor </a> <br><hr>
+            <a href="doctPsycho.html"> login As psychiatrist </a>
+        </div>
+        
+    </nav>
+<div class="disclaimer">
+    
+<h2 style="text-align: center;"><h4>DISCLAIMER</h4></h2>
+<p>Last updated: 2020-08-20</p>
+<p><h4>WEBSITE DISCLAIMER</h4></p>
+<p>The information provided by <h4>Smchikitsa Private Limited</h4> (“Company”, “we”, “our”, “us”) on <h4>www.samchikitsa.com</h4> (the “Site”) is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.</p>
+<p>UNDER NO CIRCUMSTANCE SHALL WE HAVE ANY LIABILITY TO YOU FOR ANY LOSS OR DAMAGE OF ANY KIND INCURRED AS A RESULT OF THE USE OF THE SITE OR RELIANCE ON ANY INFORMATION PROVIDED ON THE SITE. YOUR USE OF THE SITE AND YOUR RELIANCE ON ANY INFORMATION ON THE SITE IS SOLELY AT YOUR OWN RISK.</p>
+<p><h4>EXTERNAL LINKS DISCLAIMER</h4></p>
+<p>The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability or completeness by us.</p>
+<p>For example, the outlined <a href="https://policymaker.io/disclaimer/">Disclaimer</a> has been created using <a href="https://policymaker.io/">PolicyMaker.io</a>, a free web application for generating high-quality legal documents. PolicyMaker’s <a href="https://policymaker.io/disclaimer/">disclaimer generator</a> is an easy-to-use tool for creating an excellent sample Disclaimer template for a website, blog, eCommerce store or app.</p>
+<p>WE DO NOT WARRANT, ENDORSE, GUARANTEE, OR ASSUME RESPONSIBILITY FOR THE ACCURACY OR RELIABILITY OF ANY INFORMATION OFFERED BY THIRD-PARTY WEBSITES LINKED THROUGH THE SITE OR ANY WEBSITE OR FEATURE LINKED IN ANY BANNER OR OTHER ADVERTISING. WE WILL NOT BE A PARTY TO OR IN ANY WAY BE RESPONSIBLE FOR MONITORING ANY TRANSACTION BETWEEN YOU AND THIRD-PARTY PROVIDERS OF PRODUCTS OR SERVICES.</p>
+<p><h4>PROFESSIONAL DISCLAIMER</h4></p><p>The Site can not and does not contain medical advice. The information is provided for general informational and educational purposes only and is not a substitute for professional medical advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals. We do not provide any kind of medical advice.</p> <p>Content published on www.samchikitsa.com is intended to be used and must be used for informational purposes only. It is very important to do your own analysis before making any decision based on your own personal circumstances. You should take independent medical advice from a professional or independently research and verify any information that you find on our Website and wish to rely upon. </p><p>THE USE OR RELIANCE OF ANY INFORMATION CONTAINED ON THIS SITE IS SOLELY AT YOUR OWN RISK.</p>
+<p><h4>AFFILIATES DISCLAIMER</h4></p><p>The Site may contain links to affiliate websites, and we may receive an affiliate commission for any purchases or actions made by you on the affiliate websites using such links.</p>
+<p><h4>TESTIMONIALS DISCLAIMER</h4></p><p>The Site may contain testimonials by users of our products and/or services. These testimonials reflect the real-life experiences and opinions of such users. However, the experiences are personal to those particular users, and may not necessarily be representative of all users of our products and/or services. We do not claim, and you should not assume that all users will have the same experiences.</p> <p>YOUR INDIVIDUAL RESULTS MAY VARY.</p> <p>The testimonials on the Site are submitted in various forms such as text, audio and/or video, and are reviewed by us before being posted. They appear on the Site verbatim as given by the users, except for the correction of grammar or typing errors. Some testimonials may have been shortened for the sake of brevity, where the full testimonial contained extraneous information not relevant to the general public.</p> <p>The views and opinions contained in the testimonials belong solely to the individual user and do not reflect our views and opinions.</p>
+<p><h4>ERRORS AND OMISSIONS DISCLAIMER</h4></p>
+<p>While we have made every attempt to ensure that the information contained in this site has been obtained from reliable sources, Smchikitsa Private Limited is not responsible for any errors or omissions or for the results obtained from the use of this information. All information in this site is provided “as is”, with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability, and fitness for a particular purpose.</p> <p>In no event will Smchikitsa Private Limited, its related partnerships or corporations, or the partners, agents or employees thereof be liable to you or anyone else for any decision made or action taken in reliance on the information in this Site or for any consequential, special or similar damages, even if advised of the possibility of such damages.</p>
+
+<p><h4>LOGOS AND TRADEMARKS DISCLAIMER</h4></p>
+<p>All logos and trademarks of third parties referenced on www.samchikitsa.com are the trademarks and logos of their respective owners. Any inclusion of such trademarks or logos does not imply or constitute any approval, endorsement or sponsorship of Smchikitsa Private Limited by such owners.</p>
+<p><h4>CONTACT US</h4></p>
+<p>Should you have any feedback, comments, requests for technical support or other inquiries, please contact us by email: <h4>info@samchikitsa.com</h4>.</p>
+<p style="margin-top: 5em; font-size: 0.7em;">This <a href="https://policymaker.io/disclaimer/">Disclaimer</a> was created for <h4>www.samchikitsa.com</h4> by <a href="https://policymaker.io">PolicyMaker.io</a> on 2020-08-20.</p>
+
+</div>
+<footer class="footer-main">
+    <div class="footer">
+        <div class="footer-content">
+            <strong>Samchikitsa</strong><br>
+            <a id="footer-link" href="../html/about.html">about</a><br>
+            <a id="footer-link" href="../html/aboutH.html">about homeopathy</a><br>
+            <a id="footer-link" href="../html/news.html">blog</a><br>
+            <a id="footer-link" href="career.html"> career</a><br>
+            <a id="footer-link" href="mailto: info@samchikitsa.com">support 24X7</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>for patients</strong><br>
+            <a id="footer-link" href="searchDoctors.html">search for doctors</a><br>
+            <a id="footer-link" href="articles.html">health articles</a><br>
+            <a id="footer-link" href="HTC.html">consult a doctor</a><br>
+            <a id="footer-link" href="lab.html">book a lab test</a><br>
+            <a id="footer-link" href="BOA.html">offline appointments</a><br>
+            <a id="footer-link" href="subscription.html">subscriptions</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>for homeopathic doctors</strong><br>
+            <a id="footer-link" href="doctSignup.html">join samchikitsa</a><br>
+            <a id="footer-link" href="sharecase.html">share your cases</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>for psychologists</strong><br>
+            <a id="footer-link" href="doctpsycho.html">join samchikitsa</a><br>
+            <a id="footer-link" href="sharecase.html">share your cases</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>social</strong><br>
+            <a id="footer-link" href="https://www.facebook.com/Samchikitsa/">Facebook</a><br>
+            <a id="footer-link" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai">Instagram</a><br>
+            <a id="footer-link" href="#">Twitter</a><br>
+            <a id="footer-link" href="#">Linkedin</a><br>
+        </div>
+        <div class="footer-content">
+            <strong>more</strong><br>
+            <a id="footer-link" href="../html/pp.html">privacy policies</a><br>
+            <a id="footer-link" href="../html/tnc.html">terms & conditions</a><br>
+            <a id="footer-link" href="../html/disclaimer.html">disclaimer</a><br>
+        </div>
+    </div>
+    <div class="footer-img">
+        <h1>samchikitsa</h1>
+        <p>Copyright &copy; 2020. All rights reserved</p>
+
+    </div>
+</footer>
+    <!--BLOCK CONTENT END-->
+</div>
+<script>
+        var i = 0;
+        var txt = 'Serving Complete Health & Well Being';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("btext").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+
+</script>
+<script src="../js/auth.js">
+// Your web app's Firebase configuration
+var firebaseConfig = {
+        apiKey: "AIzaSyC1SSuF6ibJw6vpzbb38WDVBl2f4EWXYJY",
+        authDomain: "samchikitsa-f6d9b.firebaseapp.com",
+        databaseURL: "https://samchikitsa-f6d9b.firebaseio.com",
+        projectId: "samchikitsa-f6d9b",
+        storageBucket: "samchikitsa-f6d9b.appspot.com",
+        messagingSenderId: "196670220970",
+        appId: "1:196670220970:web:201a0e8a9cce3cefb27ed3",
+        measurementId: "G-TBY5QYXRB6"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+    const auth = firebase.auth();
+
+
+
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        if(user.email){
+            document.getElementById("myprofile").innerHTML = user.email;
+        }
+        if(user.phone){
+            document.getElementById("myprofile").innerHTML = user.phone;
+        }
+    }
+    })
+
+
+    function ifuser(){
+    
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        db.collection("doctors").doc(user.uid).get().then(doc =>{
+            docEmail = doc.data().email;
+            if(user.email == docEmail){
+                window.location.replace("doct-dashboard.html")  
+            }else{
+                    alert("no active doctor. Please login")
+                }
+
+        })
+        db.collection("users").doc(user.uid).get().then(doc =>{
+                Email = doc.data().email;
+                if(user.email == Email){
+                window.location.replace("profile.html")  
+                }else{
+                    alert("no active user. Please login")
+                }
+            })
+    }
+}) 
+
+}
+
+function signOut(){
+     auth.signOut();
+     window.location.replace("login.html")
+     alert('signed Out')
+ }
+
+
+</script>
+</body>
+</html>
+
+

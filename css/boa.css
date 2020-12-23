@@ -1,0 +1,255 @@
+.signup-grid-container{
+    position: relative;
+    width: 94vw;
+    left: 3vw;
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+
+#services-hover{
+    position: relative;
+    display: none;
+    width: 20vw;
+    background-color: black
+}
+#services-new:hover + #services-hover{
+    display: inline-block;
+}
+.head{
+    display: grid;
+    grid-template-columns:15vw 85vw ;
+}
+#switch{
+    position: relative;
+    margin: 1em;
+    padding: 0.3em;
+    text-transform: capitalize;
+    background-color:tomato;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    border:0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    border-radius: 5px;
+    
+}
+#switch:hover{
+    background-color: rgb(7, 6, 87);
+}
+#appointment{
+    margin-left:20vw ;
+    margin-top: 0.5em;
+    color: rgb(7, 6, 87);
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-size: 2em;
+    text-shadow:2px 2px 4px #9e8b8b; 
+    text-transform: uppercase;
+}
+
+.boagridcontent h3{
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-size: 1.5em;
+    margin-left: 1cm;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-top: 2em;
+}
+
+
+#google-button, #fb{
+    width: 27vw;
+    margin: 0.4em;
+    padding: 0.3em;
+    font-size: 1.2em;
+    color: white;
+    border:0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+#google-button span, #fb span{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#google-button{
+    background-color: rgba(255, 1, 1, 0.904);
+}
+
+#fb{
+    background-color: rgb(16, 16, 216);
+}
+
+
+.boagridcontent input,textarea,select{
+    font-size: 1.2em;
+    width: 80%;
+    padding-bottom: 2mm;
+    padding-left: 3mm;
+    border-bottom: solid grey 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+    margin-top: 1em;
+}
+.boagridcontent textarea{
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 7px;
+}
+.boagridcontent label{
+    color: rgb(7, 5, 116);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    margin-left: 1em;
+    border-bottom: 0;
+}
+
+.boagridcontent button{
+    color: white;
+    background-color: rgb(7, 5, 116);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0;
+    border-radius: 5px;
+    margin: 1em;
+    font-size: 1.4em;
+    padding: 0.5em  ;
+    
+}
+
+
+.signup-grid-container1{
+    position: relative;
+    width: 80vw;
+    left: 8vw;
+}
+
+.boagridcontent input,select{
+    font-size: 1.2em;
+    width: 80%;
+    padding-bottom: 2mm;
+    padding-left: 3mm;
+    border-bottom: solid grey 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+    margin-top: 1em;
+}
+.boagridcontent label{
+    margin-top: 0.5em;
+    color: rgb(94, 91, 91);
+}
+
+.boagridcontent button{
+    color: white;
+    background-color: rgb(7, 5, 116);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0;
+    border-radius: 5px;
+    margin: 1em;
+    font-size: 1.4em;
+    padding: 0.5em  ;
+    
+}
+
+#formcontainer-signup{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em;
+    background-color: transparent;
+    margin-left: 1em;
+    border-radius: 7px;
+}
+
+#formcontainer-signup p{
+    text-align: center;
+    font-size: 1.1em;
+}
+
+#google-button:hover, #fb:hover, #signup:hover, #phoneAuth:hover,#codeverify:hover{
+    opacity: 0.8;
+}
+
+#formcontainer-bmi, #formcontainer-bmi-feet, #formcontainer-bmi-meter{
+    position: relative;
+    right:-10%;
+    top: 10vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.3em;
+}
+
+#cbutton{
+    position: relative;
+    right: -10%;
+    top: 25%;   
+}
+#cbutton h2, .blogs h2{
+    text-align: center;
+    color: rgb(7, 6, 87);
+    font-family:'Barlow Semi Condensed', sans-serif;
+    font-size: 1.3em;
+    text-shadow:2px 2px 4px #9e8b8b; 
+    text-transform: uppercase;
+}
+#cbutton button, #calculate{
+    font-size: 1em;
+}
+#cbutton button:hover, #calculate:hover{
+    background-color: tomato;
+}
+
+.blogs{
+    position: relative;
+    left: 1%;
+    top: 40%;
+    width: 60%;
+    padding: 0.3em;
+}
+.blogs h2{
+    margin-bottom: 0.5em;
+    margin-top:0.5em;
+    text-align: left;
+}
+.blogs p, .blogs li{
+    font-weight: lighter;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em;
+    text-align: justify;
+    font-size: 1.1em;
+    color: rgb(61, 57, 57);
+    border-radius: 6px;
+}
+
+@media only screen and (max-width:800px){
+.boagridcontent h3, .boagridcontent h3{
+    font-size: 1.2em;
+    margin-left: 0.3cm;
+}
+}
+
+@media only screen and (max-width:900px){
+    #appointment{
+        font-size: 1.5em;
+        margin-left: 0.3cm;
+    }
+    .boagridcontent label{
+        font-size: 1em;
+    }
+    #switch{
+        font-size: 1em;
+    }
+    .signup-grid-container{
+        position: relative;
+        width: 94vw;
+        left: 3vw;
+        display: grid;
+        grid-template-columns: auto;
+    
+    }
+    }
+
+

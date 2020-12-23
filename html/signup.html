@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samchikitsa Signup</title>
+</head>
+<body>
+
+<div class="PC">  
+    <div class="header">
+        <div class="brand"><img class="brand-img" src="../images/logo.png" alt="logo"></div>
+        <div class="sam-title">
+            <h3> SAMCHIKITSA </h3>
+            <div class="quote-bg"><b id="btext"></b></div>
+        </div>
+        <div class="account">
+            <img class="avatar" src="../images/avatar.png" alt="" srcset="">  
+            <div class="account-detail">
+                <div class="account-detail-content"><a id="myprofile" onclick="ifuser()">My Profile</a></div>
+                <div class="account-detail-content"><a onclick="ifuser()">Edit User</a></div>
+                <div class="account-detail-content"><a onclick="ifuser()" onclick = signOut()>Logout</a></div>
+
+            </div>
+        </div>
+    </div>
+    <nav>
+        <a class="nav-link active" href="../index.html">Home</a>
+        <a class="nav-link" href="about.html" >About Us</a>
+        <a class="nav-link" href="testimonial.html">Testimonials</a>
+        <a class="nav-link" href="us.html">Upcoming Services</a>
+        <a class="nav-link" id="mdh" href="#">SignUp</a>
+        
+    <div class="signupContainer">
+        <a href="signup.html"> Signup As user </a><br><hr>
+        <a href="doctSignup.html"> Signup As doctor </a> <br><hr>
+        <a href="doctPsycho.html"> Signup As psychiatrist </a>
+    </div>
+        <a class="nav-link" id="mdh2" href="#">Login</a>
+        <div class="signupContainer2">
+            <a href="login.html"> login As user </a><br><hr>
+            <a href="doctSignup.html"> login As doctor </a> <br><hr>
+            <a href="doctPsycho.html"> login As psychiatrist </a>
+        </div>
+        
+    </nav>
+
+
+<!--BLOCK CONTENT-->
+<h1 style="text-align: center;text-transform: uppercase;text-shadow: 2px 2px 4px #7c7c7c; font-family: 'Barlow Semi Condensed', sans-serif;color: rgb(0, 11, 114);">User Registration</h1>
+<div class="signup-grid-container1">
+        <div class="gridcontent3">
+            <h3>Register With Samchikitsa</h3>
+            <div id="formcontainer-signup">
+                
+                <input type="email" name="email" id="email" placeholder="Enter valid email Id" required><br>
+                <input type="password" name="password" id="password" placeholder="Enter password" required><br>
+                <input type="password" name="cpassword" id="cpassword" placeholder="Confirm password" required><br>
+                <button onclick="signUp()" id="signup">Sign Up</button><br>
+                <p>Already A User ?  <a href="login.html"> Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!--BLOCK CONTENT END-->
+</div>
+<script>
+        var i = 0;
+        var txt = 'Serving Complete Health & Well Being';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("btext").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+
+    function myfunction(){
+        var a = document.getElementById("menubar-content");
+        var b = document.getElementById("services");
+        var c = document.getElementById("contact-menubar-content")
+        if(a.style.display == "none"){
+            a.style.display = "block";
+            b.style.display="none";
+            c.style.display = "none"
+        }
+        else{
+            a.style.display = "none";
+            b.style.display = "block";
+        }
+
+    }
+
+    function myfunction1(){
+        var a = document.getElementById("contact-menubar-content");
+        var b = document.getElementById("services");
+        var c = document.getElementById("menubar-content")
+    
+        if(a.style.display == "none"){
+            a.style.display = "block";
+            b.style.display="none";
+            c.style.display="none";
+        }
+        else{
+            a.style.display = "none";
+            b.style.display = "none";
+            c.style.display="block";
+        }
+
+    }
+
+
+</script>
+
+<script src="../JS/app.js">
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB2MAuoYNwlnfE7D3DUFF0ksTq52inDdmY",
+    authDomain: "samchikitsa-8ae9a.firebaseapp.com",
+    databaseURL: "https://samchikitsa-8ae9a.firebaseio.com",
+    projectId: "samchikitsa-8ae9a",
+    storageBucket: "samchikitsa-8ae9a.appspot.com",
+    messagingSenderId: "151461880341",
+    appId: "1:151461880341:web:3a6fbdaa6d75229d9ee41c",
+    measurementId: "G-XGTMGR77Z4"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+    const db = firebase.firestore();
+    const auth = firebase.auth();
+  document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+ 
+
+</script>
+</body>
+</html>
+

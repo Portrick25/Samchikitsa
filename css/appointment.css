@@ -1,0 +1,47 @@
+#myAppointments{
+    padding: 1em;
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    margin: auto;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#mycart{
+    width: 50vw;
+    margin: auto;
+    padding: 1em;
+    margin: 1em;
+    
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+}
+#mycart span{
+    font-size: 1.6em;
+    font-family: alata;
+    color: rgb(2, 2, 80);
+}
+
+#mycart b{
+    font-size: 1.2em;
+    font-family: alata;
+    color: rgb(0, 0, 0);
+}
+
+#mycart p{
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+#close{
+    position: absolute;
+    right: 2vw;
+}
+#close button{
+    color: white;
+    background-color: red;
+    padding: 0.3em;
+    border: 0;
+    border-radius: 3px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
+
+}
+

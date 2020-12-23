@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samchikitsa</title>
+</head>
+<body>
+
+    <div class="PC">
+        <div class="header">
+            <div class="brand"><img class="brand-img" src="../images/logo.png" alt="logo"></div>
+            <div class="sam-title">
+                <h3> SAMCHIKITSA </h3>
+                <div class="quote-bg"><b id="btext"></b></div>
+            </div>
+            <div class="account">
+                <img class="avatar" src="../images/avatar.png" alt="" srcset="">  
+                <div class="account-detail">
+                  <div class="account-detail-content"><a id="myprofile" onclick="ifuser()">My Profile</a></div>
+                  <div class="account-detail-content"><a onclick="ifuser()">Edit User</a></div>
+                  <div class="account-detail-content"><a onclick="ifuser()" onclick = signOut()>Logout</a></div>
+
+              </div> 
+            </div>
+        </div>
+
+        <nav>
+          <a class="nav-link active" href="../index.html">Home</a>
+          <a class="nav-link" href="about.html" >About Us</a>
+          <a class="nav-link" href="testimonial.html">Testimonials</a>
+          <a class="nav-link" href="us.html">Upcoming Services</a>
+          <a class="nav-link" id="mdh" href="#">SignUp</a>
+          
+      <div class="signupContainer">
+          <a href="signup.html"> Signup As user </a><br><hr>
+          <a href="doctSignup.html"> Signup As doctor </a> <br><hr>
+          <a href="doctPsycho.html"> Signup As psychiatrist </a>
+      </div>
+          <a class="nav-link" id="mdh2" href="#">Login</a>
+          <div class="signupContainer2">
+              <a href="login.html"> login As user </a><br><hr>
+              <a href="doctSignup.html"> login As doctor </a> <br><hr>
+              <a href="doctPsycho.html"> login As psychiatrist </a>
+          </div>
+          
+      </nav>   
+
+            <div class="disclaimer">
+              <h1>About Homeopathy</h1>  
+              <ol>
+                  
+                        <h3>What is homeopathy?</h3>
+                        <p>
+                        Homeopathy or homeopathic practice,
+                         is a medical system that was developed in Germany more than 200 years ago .
+                          It’s based on two theories:
+                          
+                        </p>
+                        <p><li><p> “Like cures like”—the notion that a disease can be cured by a substance which produces similar symptoms in healthy people.
+                          This concept of ‘law of similars' was also stated by Hippocrates and Paracelsus.</p>
+                        
+                        <img src="../images/about-h.png" alt="">
+                        <p>
+                            But Dr. Hahnemann established it on a scientific blueprint despite the fact
+                             that he lived in the age when modern scientific methods were almost unknown.
+                        </p>
+                        <img src="../images/FOH.png" alt="">
+                        <p><li>
+                            <p>
+                                “Law of minimum dose”—the notion that
+                                 after some threshold dilution, the lower the dose of the medication, the more its effectiveness.
+                            </p>
+                            <p style="padding-left:2em;">
+                                Homeopathic products come from plants (such as red onion, arnica,
+                                 poison ivy, belladonna -deadly nightshade, minerals such as white
+                                  arsenic,zinc, calcium etc., or animals.
+                                   Homeopathic products are often made as sugar pellets to be to be 
+                                   consumed orally and also in other forms such as ointments, gels, drops, creams, and tablets by 
+                                   a standard method called dynamisation or potentisation, which 
+                                comprises of successive dilutions and succussions to raise the inherent curative power of the drugs to maximum.
+                            </p>
+                            <p>
+                                Treatments are based on “individualization” or —it’s common for different
+                                 people with the same condition to receive different treatments.
+                            </p>
+
+                        </li></p>
+
+                        
+
+                
+              </ol>
+              <ol>
+                  
+                      <h3>
+                        Benefits of homeopathy:
+                      </h3>
+                      <p><li>
+                        Homoeopathic medicines are very cost effective, palatable, have no adverse side effects on the body and can be administered simply. 
+                      </li></p>
+                      <p><li>
+                        In some cases, the medicines can be prescribed on the basis of symptoms of the patients, without depending upon the cumbersome and costly diagnostic modalities. 
+                      </li></p>
+                      <p><li>
+                        Homoeopathy has been useful in treatment of psychosomatic disorders, autoimmune diseases, geriatric and pediatric disorders,
+                         ailments during pregnancy, obstinate skin diseases, lifestyle disorders and allergies, etc.
+                      </li></p>
+                      <p><li>
+                        It also has a positive role in improving the quality of life in incurable chronic diseases like cancer, HIV/AIDS, terminally ill patients and incapacitating
+                         diseases like rheumatoid arthritis, etc. Its popularity is gaining momentum, all over the world. 
+                      </li></p>
+                  
+              </ol>
+              <ol>
+                  <h3>
+                    Homeopathy in India:
+                  </h3>
+                  <p><li>
+                    In India in 1839 when Dr. John Martin Honigberger successfully treated Maharaja Ranjit Singh 
+                    for the paralysis of Vocal Cords. Dr. Honigberger settled in Kolkata and became popular as Cholera-doctor.
+                  </li></p>
+                  <p><li>
+                    Dr. Lahiri, Dr. B. K. Sarkar and many others made personal efforts 
+                    in establishing Homoeopathy as a profession. They are well known for
+                     their contribution to the growth of Homoeopathy not only in West Bengal but also in the whole country.
+                  </li></p>
+                  <p><li>
+                    Homeopathy has now become a very commonly used mode
+                     of treatment that is used by the general public to the President of India.
+                  </li></p>
+              </ol>
+              <ol>
+                  <h3>
+                    Homeopathy around the globe:
+                  </h3>
+                  <p>
+                    Homoeopathy is currently used in over 80 countries. It has legal recognition as an individual system of medicine in 42 countries. It is recognized as a part of complementary and alternative medicine in 28 countries. WHO considers Homeopathy as the most commonly used forms of treatment method.
+
+                  </p>
+                  <p>
+                    Every three out of four Europeans know about Homoeopathy and of these, 29 percent use it for their own health care. Studies have identified Homoeopathy to be the most frequently used children in European countries. The National Health Interview Survey 2007, estimated 3.9 million adults and 910,000 children used Homoeopathy in North America.
+
+                  </p>
+              </ol>
+              <ol>
+                  <h3>
+                    Myths about homeopathy:
+                  </h3>
+                  <p>
+                    These are some common misconceptions and myths about homeopathy.
+                  </p>
+                  <p><strong>MYTH: </strong> “HOMEOPATHY IS UNSCIENTIFIC”</p>
+                  <p><strong>REALITY : </strong>  There is a large body of evidence from scientific research data
+                    , control clinical studies and clinical outcome trials conducted by various molecular biologists, 
+                    physicists and nanotechnologists all around the world who have proven that homeopathy is scientific.
+                  </p>
+                  <p><strong>MYTH: </strong> “HOMEOPATHY IS UNSCIENTIFIC”</p>
+                  <p><strong>REALITY : </strong>  There is a large body of evidence from scientific research data
+                    , control clinical studies and clinical outcome trials conducted by various molecular biologists, 
+                    physicists and nanotechnologists all around the world who have proven that homeopathy is scientific.
+                  </p>
+                  <p><strong>MYTH: </strong> “HOMOEOPATHIC MEDICINES ACT SLOWLY”</p>
+                  <p><strong>REALITY : </strong>It depends upon TIME duration and SEVERITY OF DISEASE (SOD)
+                    Homoeopathy acts in diarrhea, fevers, allergies, in acute attacks of asthma,
+                    disorders of menstruation, troubles of  children and many more. Unfortunately,
+                     many times people go to a homeopath as a last hope and by then the disease would have progressed much.
+                     Severity of disease increases with time.For faster results please try to contact your homeopath in early stages of disease.
+                </p>
+                <p><strong>MYTH: </strong> “HOMOEOPATHY CANNOT TREAT SERIOUS  MEDICAL CONDITIONS”</p>
+                <p><strong>REALITY:</strong>  
+                    Homoeopathy is just like any other medical system wherein various
+                     conditions from acute to chronic can be treated. You can avoid surgery
+                      by taking homeopathic medicines in cases such as Hernia, cyst, allergic
+                       sinusitis and many more. In short, you can approach a homeopath from ‘C’ to ‘C’ i.e., from Cold to Cancer.
+                    </p>
+                    <p>
+                        Based on the severity of the disease, homoeopaths guide the 
+                        patients whether to take medication or to go for surgery.
+                         Every homeopath is well aware of the scope and limitations of his system.
+
+                    </p>
+                    <p><strong>MYTH: </strong>“HOMOEOPATHIC DOCTORS ARE NOT QUALIFIED ENOUGH AND ARE UNPROFESSIONAL””
+                    </p>
+                    <p><strong>REALITY : </strong> In India, it takes 5 and half years to graduate as a homeopathic doctor. Homoeopathy is recognized by an Act of the Parliament.</p>
+                    <p>The syllabus of this course(current course) is similar to conventional medicine:
+                    </p>
+                    <p>1st year- Anatomy, Physiology, Homeopathic Pharmacy, Biochemistry
+                    </p>
+                    <p>2nd year- Pathology, Microbiology, Parasitology, Forensic medicine and Toxicology, Org of medicine and Materia Medica
+                    </p>
+                    <p>
+                        3rd year- Gynecology and Obstetrics, Surgery, ENT, Ophthalmology. Org of medicine and Materia medica
+
+                    </p>
+                    <p>
+                        4th year- Practice of medicine, Community medicine, Org of medicine, Materia medica and Repertory
+                    </p>
+                    <p>In fact, homeopathic doctors study additional subjects related to this system.
+                    </p>
+                    <p><li>* Homeopathic pharmacy <br>
+                        * Materia Medica <br>
+                        * Organon of medicine and Homeopathic philosophy and Psychology <br>
+                        * Repertory <br>
+                        There are also specializations i.e., MD (Hom) and PhD in Homoeopathy. <br>
+                        This is the knowledge every homeopath gains during their study. <br>
+                        </li></p>
+                    
+
+              </ol>
+            </div>
+            <footer class="footer-main">
+              <div class="footer">
+                  <div class="footer-content">
+                      <strong>Samchikitsa</strong><br>
+                      <a id="footer-link" href="../html/about.html">about</a><br>
+                      <a id="footer-link" href="../html/aboutH.html">about homeopathy</a><br>
+                      <a id="footer-link" href="../html/news.html">blog</a><br>
+                      <a id="footer-link" href="career.html"> career</a><br>
+                      <a id="footer-link" href="mailto: info@samchikitsa.com">support 24X7</a><br>
+                  </div>
+                  <div class="footer-content">
+                      <strong>for patients</strong><br>
+                      <a id="footer-link" href="searchDoctors.html">search for doctors</a><br>
+                      <a id="footer-link" href="articles.html">health articles</a><br>
+                      <a id="footer-link" href="HTC.html">consult a doctor</a><br>
+                      <a id="footer-link" href="lab.html">book a lab test</a><br>
+                      <a id="footer-link" href="BOA.html">offline appointments</a><br>
+                      <a id="footer-link" href="subscription.html">subscriptions</a><br>
+                  </div>
+                  <div class="footer-content">
+                      <strong>for homeopathic doctors</strong><br>
+                      <a id="footer-link" href="doctSignup.html">join samchikitsa</a><br>
+                      <a id="footer-link" href="sharecase.html">share your cases</a><br>
+                  </div>
+                  <div class="footer-content">
+                      <strong>for psychologists</strong><br>
+                      <a id="footer-link" href="doctpsycho.html">join samchikitsa</a><br>
+                      <a id="footer-link" href="sharecase.html">share your cases</a><br>
+                  </div>
+                  <div class="footer-content">
+                      <strong>social</strong><br>
+                      <a id="footer-link" href="https://www.facebook.com/Samchikitsa/">Facebook</a><br>
+                      <a id="footer-link" href="https://instagram.com/samchikitsa?igshid=8qu71uomafai">Instagram</a><br>
+                      <a id="footer-link" href="#">Twitter</a><br>
+                      <a id="footer-link" href="#">Linkedin</a><br>
+                  </div>
+                  <div class="footer-content">
+                      <strong>more</strong><br>
+                      <a id="footer-link" href="../html/pp.html">privacy policies</a><br>
+                      <a id="footer-link" href="../html/tnc.html">terms & conditions</a><br>
+                      <a id="footer-link" href="../html/disclaimer.html">disclaimer</a><br>
+                  </div>
+              </div>
+              <div class="footer-img">
+                  <h1>samchikitsa</h1>
+                  <p>Copyright &copy; 2020. All rights reserved</p>
+      
+              </div>
+          </footer>
+   <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script>
+        var i = 0;
+        var txt = 'Serving Complete Health & Well Being';
+        var speed = 30;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("btext").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+    </script>
+    <script src="../js/auth.js">
+      // Your web app's Firebase configuration
+     var firebaseConfig = {
+        apiKey: "AIzaSyC1SSuF6ibJw6vpzbb38WDVBl2f4EWXYJY",
+        authDomain: "samchikitsa-f6d9b.firebaseapp.com",
+        databaseURL: "https://samchikitsa-f6d9b.firebaseio.com",
+        projectId: "samchikitsa-f6d9b",
+        storageBucket: "samchikitsa-f6d9b.appspot.com",
+        messagingSenderId: "196670220970",
+        appId: "1:196670220970:web:201a0e8a9cce3cefb27ed3",
+        measurementId: "G-TBY5QYXRB6"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    document.cookie = 'cross-site-cookie=bar; SameSite=None and Secure';
+    const auth = firebase.auth();
+
+
+
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        if(user.email){
+            document.getElementById("myprofile").innerHTML = user.email;
+        }
+        if(user.phone){
+            document.getElementById("myprofile").innerHTML = user.phone;
+        }
+    }
+    })
+
+
+    function ifuser(){
+    
+    auth.onAuthStateChanged(function(user){
+    if(user){ 
+        db.collection("doctors").doc(user.uid).get().then(doc =>{
+            docEmail = doc.data().email;
+            if(user.email == docEmail){
+                window.location.replace("doct-dashboard.html")  
+            }else{
+                    alert("no active doctor. Please login")
+                }
+
+        })
+        db.collection("users").doc(user.uid).get().then(doc =>{
+                Email = doc.data().email;
+                if(user.email == Email){
+                window.location.replace("profile.html")  
+                }else{
+                    alert("no active user. Please login")
+                }
+            })
+    }
+}) 
+
+}
+
+
+function signOut(){
+     auth.signOut();
+     window.location.replace("login.html")
+     alert('signed Out')
+ }
+
+
+
+
+    </script>
+</body>
+</html>
+
